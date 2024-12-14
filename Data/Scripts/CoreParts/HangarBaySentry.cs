@@ -37,7 +37,7 @@ namespace Scripts
             Targeting = new TargetingDef
             {
                 Threats = new[] {
-                    Grids, Projectiles, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
+                    Grids,// Projectiles, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
@@ -52,32 +52,37 @@ namespace Scripts
                 TopTargets = 0, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 0, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+            
+
+            
+            
+    
             },
             HardPoint = new HardPointDef
             {
                 PartName = "Sentry Hangar Bay", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 1f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                DeviateShotAngle = 25f, // Projectile inaccuracy in degrees.
+                AimingTolerance = 180f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 120, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
-                AddToleranceToTracking = false, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
+                AddToleranceToTracking = true, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
 
                 Ui = new UiDef
                 {
                     RateOfFire = false, // Enables terminal slider for changing rate of fire.
                     DamageModifier = false, // Enables terminal slider for changing damage per shot.
-                    ToggleGuidance = true, // Enables terminal option to disable smart projectile guidance.
+                    ToggleGuidance = false, // Enables terminal option to disable smart projectile guidance.
                     EnableOverload = false, // Enables terminal option to turn on Overload; this allows energy weapons to double damage per shot, at the cost of quadrupled power draw and heat gain, and 2% self damage on overheat.
                 },
                 Ai = new AiDef
                 {
-                    TrackTargets = false, // Whether this weapon tracks its own targets, or (for multiweapons) relies on the weapon with PrimaryTracking enabled for target designation.
-                    TurretAttached = false, // Whether this weapon is a turret and should have the UI and API options for such.
+                    TrackTargets = true, // Whether this weapon tracks its own targets, or (for multiweapons) relies on the weapon with PrimaryTracking enabled for target designation.
+                    TurretAttached = true, // Whether this weapon is a turret and should have the UI and API options for such.
                     TurretController = false, // Whether this weapon can physically control the turret's movement.
-                    PrimaryTracking = false, // For multiweapons: whether this weapon should designate targets for other weapons on the platform without their own tracking.
+                    PrimaryTracking = true, // For multiweapons: whether this weapon should designate targets for other weapons on the platform without their own tracking.
                     LockOnFocus = false, // Whether this weapon should automatically fire at a target that has been locked onto via HUD.
-                    SuppressFire = false, // If enabled, weapon can only be fired manually.
+                    SuppressFire = true, // If enabled, weapon can only be fired manually.
                     OverrideLeads = false, // Disable target leading on fixed weapons, or allow it for turrets.
                 },
                 HardWare = new HardwareDef
@@ -110,7 +115,7 @@ namespace Scripts
                     RotateBarrelAxis = 0, // For spinning barrels, which axis to spin the barrel around; 0 = none.
                     EnergyPriority = 0, // Deprecated.
                     MuzzleCheck = false, // Whether the weapon should check LOS from each individual muzzle in addition to the scope.
-                    Debug = false, // Force enables debug mode.
+                    Debug = true, // Force enables debug mode.
                     RestrictionRadius = 0, // Prevents other blocks of this type from being placed within this distance of the centre of the block.
                     CheckInflatedBox = false, // If true, the above distance check is performed from the edge of the block instead of the centre.
                     CheckForAnyWeapon = false, // If true, the check will fail if ANY weapon is present, not just weapons of the same subtype.
@@ -122,7 +127,7 @@ namespace Scripts
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
                     ReloadTime = 720, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    MagsToLoad = 3, // Number of physical magazines to consume on reload.
+                    MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 120, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 0, // Heat generated per shot.
                     MaxHeat = 1000, // Max heat before weapon enters cooldown (70% of max heat).
@@ -187,16 +192,17 @@ namespace Scripts
                 //Dragonyos,
                 // AryxATLASAmmoDrone,
 
-                //FullSend, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
+                FegyverLauncher, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
                 //
                 //
                 //
-                Fegyver, //Sentry mode, is the parent stage for the weapon fragments
+                FegyverDummy, //transitional stage between Launcher and Sentry
+                FegyverSentry, //Sentry mode, is the parent stage for the weapon fragments
                 //
                 //LaserPainter, //Zero damage weapon that will follow any target continuously, might blink on and off
                 LightArtillery, //Main weapon, does the actual damage, only fires when it can
                 //
-                //ReturnToSender //Return stage that goes very fast back to hangar
+                FegyverReturn //Return stage that goes very fast back to hangar
 
                 //Agyu,
                 //Orszem,
@@ -208,6 +214,7 @@ namespace Scripts
                 
             },
             //Animations = AryxSmallHangarAnimations,
+            //Animations = HexcannonAnimation,
             //Upgrades = UpgradeModules,
         };
 

@@ -419,7 +419,7 @@
 			[Damage: Energy]
 			[Homing and AOE]
 			</Description>
-			<Icon>Textures\GUI\Icons\Ceis.dds</Icon>
+			<Icon>Textures\GUI\Icons\SA_GaussAP_Large.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<BlockTopology>TriangleMesh</BlockTopology>
@@ -631,24 +631,24 @@
 				<TypeId>ConveyorSorter</TypeId>
 				<SubtypeId>MetalStorm</SubtypeId>
 			</Id>
-			<DisplayName>[SOL] METAL STORM 2077</DisplayName>
+			<DisplayName>[SOL] METAL STORM</DisplayName>
 			<Description>
 			4km Range
 			Adjustable RoF
 			64-round...uh...volley?
 			20 second reload
-			Technically, it could fire at 115,200 RPM, but it's limited to 14,400 for performance reasons.
 			</Description>
 			<Icon>Textures\GUI\Icons\Cubes\Metal_Storm.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1"/>
-			<ModelOffset x="0" y="0" z="0"/>
+			<ModelOffset x="0" y="0" z="0"/
+			>
 			<Model>Models\Cubes\Large\Metal_Storm.mwm</Model>
 			<Components>
 				<Component Subtype="SteelPlate" Count="360" />
                 <Component Subtype="Construction" Count="42" />
-								<Component Subtype="SmallTube" Count="8" />
+				<Component Subtype="SmallTube" Count="8" />
                 <Component Subtype="Motor" Count="15" />
                 <Component Subtype="LargeTube" Count="8" />
                 <Component Subtype="Computer" Count="6" />

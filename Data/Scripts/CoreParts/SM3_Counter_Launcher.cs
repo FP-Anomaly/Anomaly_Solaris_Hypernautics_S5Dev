@@ -53,6 +53,7 @@ namespace Scripts {
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 16, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                UniqueTargetPerWeapon = true, // only applies to multi-weapon blocks 
             },
             HardPoint = new HardPointDef
             {
