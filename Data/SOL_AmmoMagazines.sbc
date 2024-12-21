@@ -251,9 +251,9 @@
     <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>MetalStormProjectileFuckEnergyWeaponsJFCDarkstar</SubtypeId>
+        <SubtypeId>ScathisProj1</SubtypeId>
       </Id>
-      <DisplayName>I HATE THE ANTICHRIST</DisplayName>
+      <DisplayName>Scathis Electric Bullet </DisplayName>
       <Icon></Icon>
 	  <ExtraInventoryTooltipLine>pain</ExtraInventoryTooltipLine>
       <Size>
