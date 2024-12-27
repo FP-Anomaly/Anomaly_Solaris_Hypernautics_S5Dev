@@ -565,9 +565,9 @@
 <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
         <Id>
           <TypeId>ConveyorSorter</TypeId>
-          <SubtypeId>Hexcannon</SubtypeId>
+          <SubtypeId>PSP</SubtypeId>
         </Id>
-        <DisplayName>[SOL] Artificial Sun Launcher</DisplayName>
+        <DisplayName>[SOL] Point Singularity Projector</DisplayName>
         <Description>
     ☢ CAUTION!! ☢
     Fires a singularity that
@@ -611,7 +611,7 @@
 				<MountPoint Side="Bottom" StartX="0.00" StartY="4.00" EndX="3.00" EndY="12.00"/>
 		</MountPoints>
         <StandbyPowerConsumption>1</StandbyPowerConsumption>
-        <BlockPairName>HEXCANNON</BlockPairName>
+        <BlockPairName>PSP</BlockPairName>
         <MirroringY>Z</MirroringY>
         <MirroringZ>Y</MirroringZ>
         <BuildTimeSeconds>600</BuildTimeSeconds>
@@ -629,9 +629,9 @@
 		<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
 			<Id>
 				<TypeId>ConveyorSorter</TypeId>
-				<SubtypeId>MetalStorm</SubtypeId>
+				<SubtypeId>ScathisM77</SubtypeId>
 			</Id>
-			<DisplayName>[SOL] METAL STORM</DisplayName>
+			<DisplayName>[SOL] Scathis M-77</DisplayName>
 			<Description>
 			4km Range
 			Adjustable RoF
@@ -642,8 +642,7 @@
 			<CubeSize>Large</CubeSize>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1"/>
-			<ModelOffset x="0" y="0" z="0"/
-			>
+			<ModelOffset x="0" y="0" z="0"/>
 			<Model>Models\Cubes\Large\Metal_Storm.mwm</Model>
 			<Components>
 				<Component Subtype="SteelPlate" Count="360" />
@@ -676,7 +675,7 @@
 				<MinAllowed>0.01</MinAllowed>
 			  </DynamicMode>
 			</VoxelPlacement>
-			<BlockPairName>MetalStorm</BlockPairName>
+			<BlockPairName>ScathisM77</BlockPairName>
 			<MirroringY>Z</MirroringY>
             <MirroringZ>Y</MirroringZ>
             <EdgeType>Light</EdgeType>
@@ -704,14 +703,6 @@
             <IsAirTight>false</IsAirTight>
 			<InventoryFillFactorMin>1</InventoryFillFactorMin>
 		</Definition>
-			
-
-
-
-
-
-
-
 
 
 
