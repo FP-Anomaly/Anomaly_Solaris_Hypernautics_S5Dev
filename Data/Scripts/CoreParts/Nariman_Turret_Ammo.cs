@@ -191,7 +191,7 @@ namespace Scripts
                     NoSound = false,
                     ParticleScale = 0.25f,
                     CustomParticle = "Exp_Spark_large", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "K_SA_Gauss_Hit_A", // SubtypeID from your Audio SBC, not a filename
+                    CustomSound = "MissileHitRandom", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 },
             },
