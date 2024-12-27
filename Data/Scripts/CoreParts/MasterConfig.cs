@@ -15,8 +15,8 @@ namespace Scripts
 		SM3_Counter_Battery,
 		SolHyp_ArcStrike_HTorpedo,
         SolHyp_MAC,
-        Hexcannon,
-        MetalStorm,
+        Point_Singularity_Projector,
+        Scathis,
         Sentry_Hangar,
         Strikecraft_Hangar
 	    );

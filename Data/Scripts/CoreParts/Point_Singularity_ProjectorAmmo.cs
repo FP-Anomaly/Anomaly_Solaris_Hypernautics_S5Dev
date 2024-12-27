@@ -2122,8 +2122,8 @@ namespace Scripts
                 Enable = true, // Enables EWAR effects AND DISABLES BASE DAMAGE AND AOE DAMAGE!!
                 Type = Pull, // EnergySink, Emp, Offense, Nav, Dot, AntiSmart, JumpNull, Anchor, Tractor, Pull, Push, 
                 Mode = Field, // Effect , Field
-                Strength = 5f,
-                Radius = 2000f, // Meters
+                Strength = 15f,
+                Radius = 1000f, // Meters
                 Duration = 60, // In Ticks
                 StackDuration = false, // Combined Durations
                 Depletable = false,
