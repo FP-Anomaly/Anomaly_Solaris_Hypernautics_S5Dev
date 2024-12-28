@@ -681,7 +681,7 @@
             <EdgeType>Light</EdgeType>
             <BuildTimeSeconds>22</BuildTimeSeconds>
             <OverlayTexture>Textures\GUI\Screens\AWP_TurretOverlay_Universal.dds</OverlayTexture>
-            <WeaponDefinitionId Subtype="Ace_Turret_220MissileBattery" />
+            <WeaponDefinitionId Subtype="Not_Metal_Storm" />
             <InventoryMaxVolume>1.056</InventoryMaxVolume>
             <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
             <DamagedSound>ParticleWeapExpl</DamagedSound>
