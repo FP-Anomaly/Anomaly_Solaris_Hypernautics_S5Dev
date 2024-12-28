@@ -36,7 +36,7 @@ namespace Scripts
             AmmoRound = "Smart NanoDart", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = true, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.04f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 7500f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 9500f, // Direct damage; one steel plate is worth 100.
             Mass = 40f, // In kilograms; how much force the impact will apply to the target.
             Health = 40, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
 
@@ -175,7 +175,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1f, // Meters
-                    Damage = 1f,
+                    Damage = 15000f,
                     Depth = 1f,
                     MaxAbsorb = 0f,
                     Falloff = NoFalloff, //.NoFalloff applies the same damage to all blocks in radius

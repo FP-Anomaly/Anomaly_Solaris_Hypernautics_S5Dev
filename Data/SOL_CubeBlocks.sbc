@@ -561,7 +561,7 @@
 
 
 
-<!-- Hexcannon -->
+<!-- Singularity Projector -->
 <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
         <Id>
           <TypeId>ConveyorSorter</TypeId>
@@ -625,7 +625,7 @@
       </Definition>
 
 	    	
-		<!-- MetalStorm -->
+		<!-- Scathis -->
 		<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
 			<Id>
 				<TypeId>ConveyorSorter</TypeId>
