@@ -45,7 +45,16 @@ namespace Scripts
 
 
 
-    private AmmoDef FegyverLauncher => new AmmoDef
+
+
+
+
+
+
+
+
+
+  private AmmoDef FegyverLauncher => new AmmoDef
         {
             AmmoMagazine = "FegyverLauncherStage", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Fegyver Light Sentry", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
@@ -53,7 +62,7 @@ namespace Scripts
             EnergyCost = 0f, //0.0645f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
             Mass = 0f, // In kilograms; how much force the impact will apply to the target.
-            Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 800, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -340,7 +349,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 0.5f, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -356,7 +365,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 0.5f, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -378,7 +387,7 @@ namespace Scripts
                         Enable = true,
                         Length = 8f,
                         Width = 2f,
-                        Color = Color(red: 40f, green: 25, blue: 40f, alpha: 1),
+                        Color = Color(red: 5f, green: 35, blue: 20f, alpha: 1),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -394,7 +403,7 @@ namespace Scripts
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
-                            Color = Color(red: 16, green: 16, blue: 16, alpha: 1),
+                            Color = Color(red: 3, green: 16, blue: 10, alpha: 1),
                             WidthMultiplier = 1f,
                             Reverse = false,
                             UseLineVariance = true,
@@ -410,7 +419,7 @@ namespace Scripts
                         },
                         TextureMode = Normal,
                         DecayTime = 90,
-                        Color = Color(red: 40f, green: 25f, blue: 40f, alpha: 1),
+                        Color = Color(red: 5f, green: 35, blue: 20f, alpha: 1),
                         Back = false,
                         CustomWidth = 0.2f,
                         UseWidthVariance = false,
@@ -498,13 +507,13 @@ namespace Scripts
 private AmmoDef FegyverDummy => new AmmoDef
         {
             
-            AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
+            AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "FegyverDummyStage", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 0f, // Direct damage; one steel plate is worth 100.
             Mass = 0f, // In kilograms; how much force the impact will apply to the target.
-            Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 100, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -774,7 +783,7 @@ Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "SUNSHOT", //ShipWelderArc
+                        Name = "ShipWelder", //ArcSUNSHOT
                         Offset = Vector(x: 0, y: 0, z: 0),
                         DisableCameraCulling = true,// If not true will not cull when not in view of camera, be careful with this and only use if you know you need it
                         Extras = new ParticleOptionDef
@@ -902,29 +911,19 @@ Particles = new AmmoParticleDef
 
 
 
-
-
-
-
-
-
-
-
-
-
         private AmmoDef FegyverSentry => new AmmoDef
         {
             
-            AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
+            AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "FegyverSentryStage", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
             Mass = 3000, // In kilograms; how much force the impact will apply to the target.
-            Health = 1000, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
-            HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
+            HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             EnergyMagazineSize = 1, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
 
@@ -955,14 +954,14 @@ Particles = new AmmoParticleDef
                     Enable = true, // Enables TimedSpawns mechanism
                     Interval = 360, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 20, // Max number of fragment children to spawn
+                    MaxSpawns = 21, // Max number of fragment children to spawn
                     Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = false, // Start fragment direction pointing at Target
+                    PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
                     GroupSize = 1, // Number of spawns in each group
                     GroupDelay = 60, // Delay between each group.
-                    DirectAimCone = 5, //Angle cone in which the drone will open fire.
+                    DirectAimCone = 2, //Angle cone in which the drone will open fire.
                 },
 
             },
@@ -1166,7 +1165,7 @@ Particles = new AmmoParticleDef
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 8200, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
-                DesiredSpeed = 1f, // voxel phasing if you go above 5100
+                DesiredSpeed = 2f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
                 MaxTrajectory = 10000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
@@ -1176,23 +1175,28 @@ Particles = new AmmoParticleDef
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
-                    //Debug = true,
-                    Inaccuracy = 0, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 3, // controls how responsive tracking is.
-                    MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn
-                    //AccelClearance = 1000f, //Unknown
-                    TrackingDelay = 10, // Measured in Shape diameter units traveled.
+                    SteeringLimit = 0, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
+                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 3f, // controls how responsive tracking is.
+                    MaxLateralThrust = 3.5f, // controls how sharp the projectile may turn, this is the cheaper but less realistic version of SteeringLimit, cost of 2 on a scale of 1-5, 0 being basic smart.
+                    NavAcceleration = 0, // helps influence how the projectile steers. 
+                    TrackingDelay = 0, // Measured in Shape diameter units traveled.
+                    AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
                     MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
+                    CheckFutureIntersection = false, // Utilize obstacle avoidance for drones
+                    FutureIntersectionRange = 400,
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                     KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
-                    CheckFutureIntersection = true,
-                    OffsetRatio = 0.05f, // The ratio to offset the random dir (0 to 1) 
+                    OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 0, // The range from target at which offsets are no longer active
-                    MinTurnSpeed = 50, // set this to a reasonable value to avoid projectiles from spinning in place or being too aggressive turing at slow speeds 
+                    FocusOnly = true, // only target the constructs Ai's focus target
+                    MinTurnSpeed = 5, // set this to a reasonable value to avoid projectiles from spinning in place or being too aggressive turing at slow speeds 
+                    NoTargetApproach = true, // If true approaches can begin prior to the projectile ever having had a target.
+                    AltNavigation = false, // If true this will swap the default navigation algorithm from ProNav to ZeroEffort Miss.  Zero effort is more direct/precise but less cinematic 
                 },
                 Mines = new MinesDef
                 {
@@ -1209,7 +1213,7 @@ Particles = new AmmoParticleDef
                 ModelName = "\\Models\\Drones\\Artillery_drone.mwm",
                 VisualProbability = 1f,
                 ShieldHitDraw = true,
-Particles = new AmmoParticleDef
+                Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
                     {
@@ -1331,7 +1335,7 @@ Particles = new AmmoParticleDef
         //Fegyver Bullet
         private AmmoDef LightArtillery => new AmmoDef
         {
-            AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
+            AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Railgun_Artillery_Slug", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
@@ -1752,7 +1756,7 @@ Particles = new AmmoParticleDef
         //FegyverReturn
 private AmmoDef FegyverReturn => new AmmoDef
         {
-            AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
+            AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "FegyverReturnStage", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
@@ -1894,7 +1898,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = false,
+                    Enable = true,
                     Radius = 8f, // Radius of AOE effect, in meters.
                     Damage = 85000f,
                     Depth = 8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
@@ -1979,14 +1983,14 @@ private AmmoDef FegyverReturn => new AmmoDef
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = DroneAdvanced, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 10f, // Degrees, Is pointed forward
+                Guidance = DroneAdvanced, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed, DroneAdvanced
+                TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 800, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 40f,
+                MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                AccelPerSec = 200f,
                 DesiredSpeed = 1000f, // voxel phasing if you go above 5100
                 MaxTrajectory = 20000f,
-                DeaccelTime = 60, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
+                DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 200), // subtracts value from MaxTrajectory
@@ -1994,13 +1998,14 @@ private AmmoDef FegyverReturn => new AmmoDef
                 Smarts = new SmartsDef
                 {
                     SteeringLimit = 0, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
-                    Inaccuracy = 4f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 0.01f, // controls how responsive tracking is.
-                    MaxLateralThrust = 0.2f, // controls how sharp the trajectile may turn
+                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 5f, // controls how responsive tracking is, recommended value 3-5.
+                    MaxLateralThrust = 1, // controls how sharp the projectile may turn, this is the cheaper but less realistic version of SteeringLimit, cost of 2 on a scale of 1-5, 0 being basic smart.
+                    NavAcceleration = 2, // helps influence how the projectile steers, 0 defaults to 1/2 Aggressiveness value or 0 if its 0, a value less than 0 disables this feature. 
                     TrackingDelay = 0, // Measured in Shape diameter units traveled.
-                    MaxChaseTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    CheckFutureIntersection = true, // Utilize obstacle avoidance?
+                    CheckFutureIntersection = false, // Utilize obstacle avoidance?
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
@@ -2018,9 +2023,9 @@ private AmmoDef FegyverReturn => new AmmoDef
                     Persist = false,
                 },
             },
-            AmmoGraphics = new GraphicDef
+                        AmmoGraphics = new GraphicDef
             {
-                ModelName = "\\Models\\Ammo\\Expanse-Torpedo",
+                ModelName = "\\Models\\Ammo\\Expanse-Torpedo", //"\\Models\\Drones\\Fighter_drone.mwm",
                 VisualProbability = 1f,
                 ShieldHitDraw = false,
                 Particles = new AmmoParticleDef
@@ -2039,7 +2044,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 0.5f, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -2055,7 +2060,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 0.5f, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -2077,7 +2082,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                         Enable = true,
                         Length = 8f,
                         Width = 2f,
-                        Color = Color(red: 40f, green: 25, blue: 40f, alpha: 1),
+                        Color = Color(red: 5f, green: 35, blue: 20f, alpha: 1),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -2093,7 +2098,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
-                            Color = Color(red: 16, green: 16, blue: 16, alpha: 1),
+                            Color = Color(red: 3, green: 16, blue: 10, alpha: 1),
                             WidthMultiplier = 1f,
                             Reverse = false,
                             UseLineVariance = true,
@@ -2109,7 +2114,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                         },
                         TextureMode = Normal,
                         DecayTime = 90,
-                        Color = Color(red: 40f, green: 25f, blue: 40f, alpha: 1),
+                        Color = Color(red: 5f, green: 35, blue: 20f, alpha: 1),
                         Back = false,
                         CustomWidth = 0.2f,
                         UseWidthVariance = false,

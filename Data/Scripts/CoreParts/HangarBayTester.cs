@@ -13,13 +13,13 @@ namespace Scripts
     partial class Parts
     {
 
-        WeaponDefinition Sentry_Hangar => new WeaponDefinition
+        WeaponDefinition Test_Hangar => new WeaponDefinition
         {
             Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
                     new MountPointDef {
-                        SubtypeId = "WCSentry_Hangar",
+                        SubtypeId = "WCTest_Hangar",
                         SpinPartId = "None", // For weapons with a spinning barrel such as Gatling Guns.
                         MuzzlePartId = "None", // The subpart where your muzzle empties are located.
                         AzimuthPartId = "None",
@@ -60,7 +60,7 @@ namespace Scripts
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Sentry Hangar Bay", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
+                PartName = "Tester Hangar Bay", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
                 DeviateShotAngle = 25f, // Projectile inaccuracy in degrees.
                 AimingTolerance = 180f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
@@ -110,7 +110,7 @@ namespace Scripts
                         DefaultArmedTimer = 120, // Sets default countdown duration.
                         PreArmed = false, // Whether the warhead is armed by default when placed. Best left as false.
                         TerminalControls = true, // Whether the warhead should have terminal controls for arming and detonation.
-                        AmmoRound = "", // Optional. If specified, the warhead will always use this ammo on detonation rather than the currently selected ammo.
+                        AmmoRound = "40m", // Optional. If specified, the warhead will always use this ammo on detonation rather than the currently selected ammo.
                     },
                 },
                 Other = new OtherDef
@@ -126,11 +126,11 @@ namespace Scripts
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 36, // Set this to 3600 for beam weapons.
+                    RateOfFire = 360, // Set this to 3600 for beam weapons.
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 1500, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 720, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 120, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 0, // Heat generated per shot.
@@ -196,17 +196,17 @@ namespace Scripts
                 //Dragonyos,
                 // AryxATLASAmmoDrone,
 
-                FegyverLauncher, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
+                //TesterLauncher, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
                 //
                 //
                 //
-                FegyverDummy, //transitional stage between Launcher and Sentry
-                FegyverSentry, //Sentry mode, is the parent stage for the weapon fragments
+                //FegyverDummy, //transitional stage between Launcher and Sentry
+                TesterSentry, //Sentry mode, is the parent stage for the weapon fragments
                 //
                 //LaserPainter, //Zero damage weapon that will follow any target continuously, might blink on and off
-                LightArtillery, //Main weapon, does the actual damage, only fires when it can
+                MediumArtillery, //Main weapon, does the actual damage, only fires when it can
                 //
-                FegyverReturn //Return stage that goes very fast back to hangar
+                //FegyverReturn //Return stage that goes very fast back to hangar
 
                 //Agyu,
                 //Orszem,

@@ -102,6 +102,31 @@
         </AmmoMagazine>
 
 
+        <AmmoMagazine>
+            <Id>
+               <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>TesterLauncherStage</SubtypeId>
+            </Id>
+            <DisplayName>Tester Sentry</DisplayName>
+            <Icon>Textures\GUI\Icons\Artillery_drone.dds</Icon>
+            <Size>
+                <X>1</X>
+                <Y>2</Y>
+                <Z>0.5</Z>
+            </Size>
+            <Mass>350</Mass>
+            <Volume>500</Volume>
+            <Model>Models\Drones\Artillery_drone.mwm</Model>
+            <PhysicalMaterial>Ammo</PhysicalMaterial>
+            <Capacity>1</Capacity>
+            <AmmoDefinitionId Subtype="TestAmmoB8T" />
+
+            <MinimumOfferAmount>1</MinimumOfferAmount>
+            <MaximumOfferAmount>12</MaximumOfferAmount>
+            <MinimumOrderAmount>1</MinimumOrderAmount>
+            <MaximumOrderAmount>12</MaximumOrderAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </AmmoMagazine>
         
         <AmmoMagazine>
             <Id>

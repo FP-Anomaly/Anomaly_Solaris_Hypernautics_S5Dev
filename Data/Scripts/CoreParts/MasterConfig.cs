@@ -18,7 +18,8 @@ namespace Scripts
         Point_Singularity_Projector,
         Scathis,
         Sentry_Hangar,
-        Strikecraft_Hangar
+        Strikecraft_Hangar,
+        Test_Hangar
 	    );
         }
     }
