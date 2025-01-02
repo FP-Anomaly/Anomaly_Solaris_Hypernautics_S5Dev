@@ -217,7 +217,7 @@ namespace Scripts
 
                 
             },
-            //Animations = AryxSmallHangarAnimations,
+            //Animations = ArcAnimation,//
             //Animations = HexcannonAnimation,
             //Upgrades = UpgradeModules,
         };

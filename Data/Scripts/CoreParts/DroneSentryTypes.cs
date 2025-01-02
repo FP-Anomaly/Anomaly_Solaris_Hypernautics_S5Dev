@@ -776,10 +776,10 @@ private AmmoDef FegyverDummy => new AmmoDef
             AmmoGraphics = new GraphicDef
             {
                 //Debug = true,
-                ModelName = "\\Models\\Ammo\\Expanse-Torpedo",
+                ModelName = "\\Models\\Ammo\\Starcore_DroneProjectileA_Proto_Large",
                 VisualProbability = 1f,
                 ShieldHitDraw = true,
-Particles = new AmmoParticleDef
+                Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
                     {
@@ -1601,23 +1601,23 @@ Particles = new AmmoParticleDef
             },
             AmmoGraphics = new GraphicDef
             {
-                ModelName = "\\Models\\Ammo\\Expanse-Torpedo",
+                ModelName = "\\Models\\Ammo\\Expanse-Torpedo-Smol",//Expanse-Torpedo-Smol
                 VisualProbability = 1f,
                 ShieldHitDraw = false,
                 Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "SUNTRAVEL", //ShipWelderArc
+                        Name = "", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 0.75f,
+                            Scale = 0.35f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "",
+                        Name = "ArcImpact",
                         ApplyToShield = true,
 
                         Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
@@ -1626,7 +1626,7 @@ Particles = new AmmoParticleDef
                         {
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
+                            MaxDuration = 10,
                             Scale = 1,
                             HitPlayChance = 1f,
                         },
@@ -1662,7 +1662,7 @@ Particles = new AmmoParticleDef
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "WeaponLaser",
+                            "WarpBubble",
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -1813,7 +1813,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                 Patterns = new[] { // If enabled, set of multiple ammos to fire in order instead of the main ammo.
                     "",
                 },
-                Mode = Weapon, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
+                Mode = Fragment, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
                 TriggerChance = 1f, // This is %
                 Random = false, // This randomizes the number spawned at once, NOT the list order.
                 RandomMin = 1,
@@ -1898,7 +1898,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = true,
+                    Enable = false,
                     Radius = 8f, // Radius of AOE effect, in meters.
                     Damage = 85000f,
                     Depth = 8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
@@ -1987,7 +1987,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 200f,
+                AccelPerSec = 2000f,
                 DesiredSpeed = 1000f, // voxel phasing if you go above 5100
                 MaxTrajectory = 20000f,
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
@@ -2023,7 +2023,7 @@ private AmmoDef FegyverReturn => new AmmoDef
                     Persist = false,
                 },
             },
-                        AmmoGraphics = new GraphicDef
+            AmmoGraphics = new GraphicDef
             {
                 ModelName = "\\Models\\Ammo\\Expanse-Torpedo", //"\\Models\\Drones\\Fighter_drone.mwm",
                 VisualProbability = 1f,

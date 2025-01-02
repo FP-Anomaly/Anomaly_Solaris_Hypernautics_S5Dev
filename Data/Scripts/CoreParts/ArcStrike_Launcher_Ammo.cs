@@ -687,7 +687,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Expanse_Trail", //ShipWelderArc
+                        Name = "ARROWTRAIL", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
@@ -699,7 +699,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -715,7 +715,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -737,7 +737,7 @@ namespace Scripts
                         Enable = true,
                         Length = 8f,
                         Width = 2f,
-                        Color = Color(red: 40f, green: 25, blue: 40f, alpha: 1),
+                        Color = Color(red: 40f, green: 15, blue: 15f, alpha: 1),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -769,7 +769,7 @@ namespace Scripts
                         },
                         TextureMode = Normal,
                         DecayTime = 90,
-                        Color = Color(red: 40f, green: 25f, blue: 40f, alpha: 1),
+                        Color = Color(red: 40f, green: 10f, blue: 10f, alpha: 1),
                         Back = false,
                         CustomWidth = 0.2f,
                         UseWidthVariance = false,
@@ -1069,7 +1069,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Expanse_Trail", //ShipWelderArc
+                        Name = "ARROWTRAIL", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
@@ -1081,7 +1081,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -1097,7 +1097,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -1118,7 +1118,7 @@ namespace Scripts
                         Enable = true,
                         Length = 8f,
                         Width = 1f,
-                        Color = Color(red: 40f, green: 25f, blue: 40f, alpha: 1),
+                        Color = Color(red: 40f, green: 10f, blue: 10f, alpha: 1),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -1459,7 +1459,7 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -1474,7 +1474,7 @@ namespace Scripts
                     {
                         Name = "",
                         ApplyToShield = true,
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 3, green: 0.5f, blue: 0.5f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
