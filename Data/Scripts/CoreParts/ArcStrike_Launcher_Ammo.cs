@@ -313,11 +313,11 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "", //ShipWelderArc
+                        Name = ARROWTRAIL"", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1f,
+                            Scale = 0.3f,
                         },
                     },
                     Hit = new ParticleDef
@@ -687,7 +687,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "ARROWTRAIL", //ShipWelderArc
+                        Name = "Expanse_Trail", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
