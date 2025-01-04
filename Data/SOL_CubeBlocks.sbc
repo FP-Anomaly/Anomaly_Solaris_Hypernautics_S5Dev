@@ -440,7 +440,7 @@
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
-				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" />
+				<MountPoint Side="Bottom" StartX="0.5" StartY="0.5" EndX="2.5" EndY="2.5" />
 			</MountPoints>
 
 
@@ -837,7 +837,7 @@
       <BlockTopology>TriangleMesh</BlockTopology>
       <Size x="5" y="2" z="2"/>
 			<ModelOffset x="0" y="0" z="0"/>
-      <Model>Models\Hangar.mwm</Model>
+      <Model>Models\SwordMelee.mwm</Model>
       <Components>
         <Component Subtype="SteelPlate" Count="250" />
         <Component Subtype="Construction" Count="500" />	

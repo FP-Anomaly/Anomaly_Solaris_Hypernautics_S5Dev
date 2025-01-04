@@ -1069,7 +1069,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "ARROWTRAIL", //ShipWelderArc
+                        Name = "Expanse_Trail", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
