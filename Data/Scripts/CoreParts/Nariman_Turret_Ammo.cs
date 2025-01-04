@@ -308,7 +308,7 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 0.25,
+                            Scale = 0.25f,
                         },
                     },
                     Hit = new ParticleDef
