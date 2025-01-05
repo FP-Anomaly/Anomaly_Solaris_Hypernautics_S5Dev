@@ -457,60 +457,7 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Fegyver Sentry Drone
         private AmmoDef FegyverSentry => new AmmoDef
         {
             
@@ -759,7 +706,7 @@ namespace Scripts
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed, DroneAdvanced
+                Guidance = DroneAdvanced, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed, DroneAdvanced
                 //Debug = true,
                 TargetLossDegree = 0f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -929,9 +876,6 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
-
-
-
         //Fegyver Bullet
         private AmmoDef LightArtillery => new AmmoDef
         {

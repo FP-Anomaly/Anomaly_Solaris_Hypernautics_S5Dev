@@ -193,23 +193,17 @@ namespace Scripts
                 },
             },
             Ammos = new[] {
-                //Dragonyos,
-                // AryxATLASAmmoDrone,
-
                 FegyverLauncher, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
-                //
-                //
-                //
-                //FegyverDummy, //transitional stage between Launcher and Sentry
                 FegyverSentry, //Sentry mode, is the parent stage for the weapon fragments
-                //
-                //LaserPainter, //Zero damage weapon that will follow any target continuously, might blink on and off
                 LightArtillery, //Main weapon, does the actual damage, only fires when it can
-                //
-                //FegyverReturn //Return stage that goes very fast back to hangar
 
-                //Agyu,
+                //AgyuLauncher, 
+                //AgyuSentry,
+                //HeavyArtillery,
+
+
                 //Orszem,
+
                 //ConcussionMissile,
                 
                 //HeavyArtillery,
