@@ -200,13 +200,13 @@ namespace Scripts
                 //
                 //
                 //
-                FegyverDummy, //transitional stage between Launcher and Sentry
+                //FegyverDummy, //transitional stage between Launcher and Sentry
                 FegyverSentry, //Sentry mode, is the parent stage for the weapon fragments
                 //
                 //LaserPainter, //Zero damage weapon that will follow any target continuously, might blink on and off
                 LightArtillery, //Main weapon, does the actual damage, only fires when it can
                 //
-                FegyverReturn //Return stage that goes very fast back to hangar
+                //FegyverReturn //Return stage that goes very fast back to hangar
 
                 //Agyu,
                 //Orszem,
