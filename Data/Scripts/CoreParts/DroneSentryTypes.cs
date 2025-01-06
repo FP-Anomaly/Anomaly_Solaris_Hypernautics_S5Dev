@@ -3048,57 +3048,39 @@ namespace Scripts
             {
                 AmmoRound = "Light_Drone_Slug", // AmmoRound field of the ammo to spawn.
                 Fragments = 1, // Number of projectiles to spawn.
-                Degrees = 1f, // Cone in which to randomize direction of spawned projectiles.
+                Degrees = 0, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-
+                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
+                AdvOffset = Vector(x: 0, y: 0, z: 0), // advanced offsets the fragment by xyz coordinates relative to parent, value is read from fragment ammo type.
                 TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
                 {
                     Enable = true, // Enables TimedSpawns mechanism
-                    Interval = 15, // Time between spawning fragments, in ticks
-                    StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 21, // Max number of fragment children to spawn
-                    Proximity = 7000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Interval = 0, // Time between spawning fragments, in ticks, 0 means every tick, 1 means every other
+                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
+                    MaxSpawns = 770, // Max number of fragment children to spawn
+                    Proximity = 900, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = false, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
-                    PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
-                    GroupSize = 1, // Number of spawns in each group
+                    PointType = Direct, // Point accuracy, Direct (straight forward), Lead (always fire), Predict (only fire if it can hit)
+                    DirectAimCone = 0f, //Aim cone used for Direct fire, in degrees
+                    GroupSize = 110, // Number of spawns in each group
                     GroupDelay = 60, // Delay between each group.
-                    DirectAimCone = 2, //Angle cone in which the drone will open fire.
                 },
 
             },
             Pattern = new PatternDef
             {
                 Patterns = new[] { // If enabled, set of multiple ammos to fire in order instead of the main ammo.
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
-                    "Light_Drone_Slug",
+                    "",
                     //"FegyverReturnStage",
                 },
-                Enable = true,
-                Mode = Both, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
+                Enable = false,
+                Mode = Fragment, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
                 TriggerChance = 1f,
                 Random = false,
                 RandomMin = 1,
