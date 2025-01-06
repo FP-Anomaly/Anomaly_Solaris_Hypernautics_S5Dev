@@ -185,7 +185,7 @@
         <AmmoMagazine>
             <Id>
                 <TypeId>AmmoMagazine</TypeId>
-                <SubtypeId>OrszemDrone</SubtypeId>
+                <SubtypeId>OrszemLauncherStage</SubtypeId>
             </Id>
             <DisplayName>Orszem Sentinel</DisplayName>
             <Icon>Textures\GUI\Icons\Artillery_drone.dds</Icon>

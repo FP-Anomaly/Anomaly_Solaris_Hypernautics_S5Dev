@@ -202,12 +202,9 @@ namespace Scripts
                 HeavyArtillery,
 
 
-                //Orszem,
-
-                //ConcussionMissile,
-                
-                //HeavyArtillery,
-                //PointDefenseBullet
+                OrszemLauncher,
+                OrszemSentry,
+                PointDroneShot,
 
                 
             },
