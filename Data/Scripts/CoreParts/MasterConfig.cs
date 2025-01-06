@@ -11,7 +11,7 @@ namespace Scripts
 		Flechette_Cannon,
         Nariman_Smart_Turret,
         Auger3_Internal_Turret,
-        //,Auger5_Internal_Turret
+        Auger5_Internal_Turret,
         S_Chem_Laser,
         //S_Armored_Laser,
 		SM3_Counter_Battery,
