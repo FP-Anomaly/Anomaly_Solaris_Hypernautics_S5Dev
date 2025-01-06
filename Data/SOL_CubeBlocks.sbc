@@ -398,7 +398,7 @@
 
 
 
-
+		<!-- Nariman NanoDart Turret -->
 		
 		<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
 			<Id>
@@ -407,17 +407,12 @@
 			</Id>
 			<DisplayName>[SOL] Nariman NanoDart Turret</DisplayName>
 			<Description>
-			Dual Ammo, Dual Purpose Turret
+			Dual Purpose Turret
 			Smart NanoDart:
 			[Range: 5km]
 			[Velocity: 2.5km/s]
 			[Damage: Energy]
 			[Homing and AMS]
-			Concussion Bolt:
-			[Range: 3.5km]
-			[Velocity: 600m/s]
-			[Damage: Energy]
-			[Homing and AOE]
 			</Description>
 			<Icon>Textures\GUI\Icons\SA_GaussAP_Large.dds</Icon>
 			<CubeSize>Large</CubeSize>
@@ -480,6 +475,91 @@
 			<EmissiveColorPreset>Default</EmissiveColorPreset>
 		</Definition>
 	
+
+
+
+
+		<!-- Auger Series 3 Meson Gun -->
+		
+		<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+			<Id>
+				<TypeId>ConveyorSorter</TypeId>
+				<SubtypeId>Meson3_Turret</SubtypeId>
+			</Id>
+			<DisplayName>[SOL] Auger Series 3 Meson Gun</DisplayName>
+			<Description>
+			Internal Turret
+			Medium Meson Gun:
+			[Range: 3km]
+			[Velocity: 2.5km/s]
+			[Damage: Kinetic]
+			</Description>
+			<Icon>Textures\GUI\Icons\SA_GaussAP_Large.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<GuiVisible>false</GuiVisible>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="3" y="3" z="3" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\SA_GaussAP_Large.mwm</Model>
+			<UseModelIntersection>true</UseModelIntersection>
+			<Components>
+				<Component Subtype="SteelPlate" Count="50" />
+				<Component Subtype="Superconductor" Count="150" />
+				<Component Subtype="Construction" Count="240" />
+				<Component Subtype="Motor" Count="120" />
+				<Component Subtype="Reactor" Count="30" />
+				<Component Subtype="Detector" Count="45" />
+				<Component Subtype="Computer" Count="200" />
+				<Component Subtype="MetalGrid" Count="125" />
+				<Component Subtype="SteelPlate" Count="750" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="3"/>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="3"/>
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="3" EndY="3"/>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="3" EndY="3"/>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="3"/>
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" />
+			</MountPoints>
+
+
+			
+			<VoxelPlacement>
+				<StaticMode>
+					<PlacementMode>OutsideVoxel</PlacementMode>
+					<MaxAllowed>0.2</MaxAllowed>
+					<MinAllowed>0</MinAllowed>
+				</StaticMode>
+				<DynamicMode>
+					<PlacementMode>OutsideVoxel</PlacementMode>
+					<MaxAllowed>0.2</MaxAllowed>
+					<MinAllowed>0.01</MinAllowed>
+				</DynamicMode>
+			</VoxelPlacement>
+			<BlockPairName>Meson3_Turret</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<InventoryMaxVolume>1</InventoryMaxVolume>
+			<DamageEffectId>213</DamageEffectId>
+			<AiEnabled>false</AiEnabled>
+			<DamagedSound>ParticleWeapExpl</DamagedSound>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<MinElevationDegrees>-5</MinElevationDegrees>
+			<MaxElevationDegrees>100</MaxElevationDegrees>
+			<MinAzimuthDegrees>-180</MinAzimuthDegrees>
+			<MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+			<RotationSpeed>0.0001</RotationSpeed>
+			<ElevationSpeed>0.0001 </ElevationSpeed>
+			<IdleRotation>false</IdleRotation>
+			<MaxRangeMeters>3500</MaxRangeMeters>
+			<MinFov>0.0001</MinFov>
+			<MaxFov>2</MaxFov>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+		</Definition>
+
 
 
 

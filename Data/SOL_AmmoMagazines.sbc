@@ -158,7 +158,7 @@
         <AmmoMagazine>
             <Id>
                 <TypeId>AmmoMagazine</TypeId>
-                <SubtypeId>AgyuDrone</SubtypeId>
+                <SubtypeId>AgyuLauncherStage</SubtypeId>
             </Id>
             <DisplayName>Agyu Heavy Sentry</DisplayName>
             <Icon>Textures\GUI\Icons\Artillery_drone.dds</Icon>
