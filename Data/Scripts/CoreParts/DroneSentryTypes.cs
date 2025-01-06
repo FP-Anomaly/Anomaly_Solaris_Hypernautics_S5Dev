@@ -489,10 +489,10 @@ namespace Scripts
                 TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
                 {
                     Enable = true, // Enables TimedSpawns mechanism
-                    Interval = 360, // Time between spawning fragments, in ticks
+                    Interval = 2700, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 3, // Max number of fragment children to spawn
-                    Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 10000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
@@ -856,13 +856,13 @@ namespace Scripts
             AmmoRound = "Coilgun_Artillery_Slug", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 125000f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 425000f, // Direct damage; one steel plate is worth 100.
             Mass = 2500f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
-            EnergyMagazineSize = 10, // For energy weapons, how many shots to fire before reloading.
+            EnergyMagazineSize = 3, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
 
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -894,7 +894,7 @@ namespace Scripts
                     Interval = 10, // Time between spawning fragments, in ticks
                     StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 900, // Max number of fragment children to spawn
-                    Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 10000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = false, // Parent dies once after it spawns its last child.
                     PointAtTarget = false, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
@@ -928,7 +928,7 @@ namespace Scripts
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
-                    Distance = 6000f, // Distance at which damage begins falling off.
+                    Distance = 8000f, // Distance at which damage begins falling off.
                     MinMultipler = 0.75f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
                 },
                 Grids = new GridSizeDef
@@ -945,7 +945,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = -1f, // Multiplier for damage against shields.
+                    Modifier = 6f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -980,7 +980,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 3f, // Meters
-                    Damage = 10000f, // Damages 4 blocks
+                    Damage = 100000f, // Damages 4 blocks
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 2500f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
@@ -996,7 +996,7 @@ namespace Scripts
                 {
                     Enable = true, //particle spawned on hit
                     Radius = 1f, // Radius of AOE effect, in meters.
-                    Damage = 140500f,
+                    Damage = 240500f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
@@ -1084,8 +1084,8 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 900, //120 is required for sound. 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 5000, // voxel phasing if you go above 5100
-                MaxTrajectory = 10000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 5100, // voxel phasing if you go above 5100
+                MaxTrajectory = 12000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -1134,7 +1134,7 @@ namespace Scripts
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "ArcImpact",
+                        Name = "ARROWNUKE",
                         ApplyToShield = true,
 
                         Color = Color(red: 3, green: 1f, blue: 1.9f, alpha: 1),
@@ -1206,10 +1206,10 @@ namespace Scripts
                             "WeaponLaser",
                         },
                         TextureMode = Normal,
-                        DecayTime = 90,
+                        DecayTime = 120,
                         Color = Color(red: 40f, green: 40f, blue: 25f, alpha: 1),
                         Back = false,
-                        CustomWidth = 0.2f,
+                        CustomWidth = 0.5f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },
@@ -1787,7 +1787,7 @@ namespace Scripts
                     Interval = 360, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 21, // Max number of fragment children to spawn
-                    Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 7000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
@@ -1999,7 +1999,7 @@ namespace Scripts
                 AccelPerSec = 50f,
                 DesiredSpeed = 2f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
-                MaxTrajectory = 10000,
+                MaxTrajectory = 7000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -2257,7 +2257,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = -1f, // Multiplier for damage against shields.
+                    Modifier = 6f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -2306,7 +2306,7 @@ namespace Scripts
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = true, //particle spawned on hit
+                    Enable = false, //particle spawned on hit
                     Radius = 1f, // Radius of AOE effect, in meters.
                     Damage = 140500f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
@@ -2518,7 +2518,7 @@ namespace Scripts
                             "WeaponLaser",
                         },
                         TextureMode = Normal,
-                        DecayTime = 90,
+                        DecayTime = 80,
                         Color = Color(red: 40f, green: 25f, blue: 40f, alpha: 1),
                         Back = false,
                         CustomWidth = 0.2f,
