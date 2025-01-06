@@ -43,8 +43,8 @@ namespace Scripts
     {
 
 
-
-  private AmmoDef AgyuLauncher => new AmmoDef
+    //Agyu Launcher Stage
+    private AmmoDef AgyuLauncher => new AmmoDef
         {
             AmmoMagazine = "AgyuLauncherStage", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Agyu Heavy Sentry", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
@@ -447,7 +447,7 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
-        //Fegyver Sentry Drone
+        //Agyu Sentry Drone
         private AmmoDef AgyuSentry => new AmmoDef
         {
             
@@ -849,7 +849,7 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
-        //Fegyver Bullet
+        //Agyu Bullet
         private AmmoDef HeavyArtillery => new AmmoDef
         {
             AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
@@ -1125,7 +1125,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "", //ShipWelderArc
+                        Name = "ARROWFLARE", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: -0.21f),
                         Extras = new ParticleOptionDef
                         {
@@ -1338,8 +1338,8 @@ namespace Scripts
 
 
 
-
-  private AmmoDef FegyverLauncher => new AmmoDef
+    //Fegyver Launcher Stage
+    private AmmoDef FegyverLauncher => new AmmoDef
         {
             AmmoMagazine = "FegyverLauncherStage", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Fegyver Light Sentry", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
