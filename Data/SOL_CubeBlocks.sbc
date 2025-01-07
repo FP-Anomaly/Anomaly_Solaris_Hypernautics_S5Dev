@@ -580,7 +580,7 @@
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="3" y="3" z="3" />
 			<ModelOffset x="0" y="0" z="0" />
-			<Model>Models\SA_GaussAP_Large.mwm</Model>
+			<Model>Models\SA_Auger_S3.mwm</Model>
 			<UseModelIntersection>true</UseModelIntersection>
 			<Components>
 				<Component Subtype="SteelPlate" Count="50" />
