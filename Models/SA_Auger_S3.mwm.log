@@ -1,0 +1,148 @@
+Running from: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models 
+Command: C:\Users\wolvo\OneDrive\Desktop\SEUT text\Tools\MWMBuilder\MwmBuilder.exe /f /s:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models /m:SA_Auger_S3*.fbx /o:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models /x:C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials 
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Armors.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Character.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\enenra.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Foliage.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Items.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\LODs.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Materials.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\PlayerItems.xml: 
+    Materialslib
+C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Voxels.xml: 
+    Materialslib
+Material Libraries: 
+    Material libraries were successfully loaded from path: C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials
+: 
+    **FileName: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx
+: 
+    **Filename (without extension): SA_Auger_S3
+: 
+    **Directory Name: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models
+: 
+    **Number of characters to cull: 91
+: 
+    **Culled Path: Models
+Meshes: 
+    Found 7 meshe(s).
+Animations: 
+    Found 0 animation(s).
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: PaintedMetal_Clean is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: HydrogenThrusterConePlates is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: MetalMilitary is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: HydrogenThrusterInjector is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: Leather_Dark is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: Atlas3_Colorable is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Material: ButtonsAtlas_Colorable is already defined in the processor. Not adding it again..
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 28 29 29)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 28 29 28)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 85 85 84)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 85 84 84)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 85 197 197)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 85 197 85)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 230 230 229)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 230 229 229)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 230 281 281)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 230 281 230)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 197 197 389)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 197 389 389)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 499 499 28)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 499 28 28)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 499 554 554)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 499 554 499)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 667 667 666)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 667 666 666)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 229 699 699)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 229 699 229)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 751 751 750)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 751 750 750)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 751 667 667)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 751 667 751)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1009 1009 1008)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1009 1008 1008)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1009 1060 1060)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1009 1060 1009)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1169 1169 1168)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1169 1168 1168)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1197 1198 1198)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1197 1198 1197)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1246 1246 1245)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1246 1245 1245)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1246 1169 1169)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1246 1169 1246)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1008 1455 1455)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1008 1455 1008)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1507 1507 1506)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1507 1506 1506)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1507 1615 1615)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1507 1615 1507)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1643 1643 1197)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1643 1197 1197)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1643 1690 1690)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1643 1690 1643)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1615 1615 1794)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: WARNING: 
+    Model contains degenerated triangle (indices 1615 1794 1794)
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\SA_Auger_S3.fbx: 
+    : Finished in 0.7s
