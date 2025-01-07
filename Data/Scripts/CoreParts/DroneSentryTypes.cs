@@ -285,7 +285,7 @@ namespace Scripts
                 MaxLifeTime = 800, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 200f,
                 DesiredSpeed = 200f, // voxel phasing if you go above 5100
-                MaxTrajectory = 10000f,
+                MaxTrajectory = 20000f,
                 DeaccelTime = 60, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -457,7 +457,7 @@ namespace Scripts
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
             Mass = 3000, // In kilograms; how much force the impact will apply to the target.
-            Health = 1200, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 2400, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -489,13 +489,13 @@ namespace Scripts
                 TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
                 {
                     Enable = true, // Enables TimedSpawns mechanism
-                    Interval = 2700, // Time between spawning fragments, in ticks
+                    Interval = 1800, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 3, // Max number of fragment children to spawn
                     Proximity = 10000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
-                    PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
+                    PointType = Lead, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
                     GroupSize = 1, // Number of spawns in each group
                     GroupDelay = 60, // Delay between each group.
                     DirectAimCone = 2, //Angle cone in which the drone will open fire.
@@ -595,25 +595,26 @@ namespace Scripts
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = false,
-                    Radius = 3, // Meters
-                    Damage = 50,
-                    Depth = 2f,
-                    MaxAbsorb = 0f,
-                    Falloff = Linear, //.NoFalloff applies the same damage to all blocks in radius
+                    Enable = true ,
+                    Radius = 12f , // Meters
+                    Damage = 45000f ,
+                    Depth = 6f ,
+                    MaxAbsorb = 0f ,
+                    Falloff = Linear , //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
                     //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
                     //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 3600, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = false,
-                    NoSound = false,
-                    ParticleScale = 1f,
-                    CustomParticle = "FlechetteBurst", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Round, // Round or Diamond
+                    //.Exponential drops off exponentially.  Does not scale to max radius
+                    ArmOnlyOnHit = false , // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
+                    MinArmingTime = 0 , // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
+                    NoVisuals = false ,
+                    NoSound = false ,
+                    ParticleScale = 3 ,
+                    CustomParticle = "Definitive_Explosion", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "MyRailRoundHit", // SubtypeID from your Audio SBC, not a filename
+                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
                 }, 
             },
             Ewar = new EwarDef
@@ -683,11 +684,11 @@ namespace Scripts
                 //Debug = true,
                 TargetLossDegree = 0f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 7200, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
                 DesiredSpeed = 2f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
-                MaxTrajectory = 10000,
+                MaxTrajectory = 20000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -1010,7 +1011,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = false,
                     NoSound = false,
-                    ParticleScale = 1,
+                    ParticleScale = 3,
                     CustomParticle = "Definitive_Explosion", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "MyRailRoundHit", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
@@ -1085,7 +1086,7 @@ namespace Scripts
                 MaxLifeTime = 900, //120 is required for sound. 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 5100, // voxel phasing if you go above 5100
-                MaxTrajectory = 12000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 20000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -1342,7 +1343,7 @@ namespace Scripts
     private AmmoDef FegyverLauncher => new AmmoDef
         {
             AmmoMagazine = "FegyverLauncherStage", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
-            AmmoRound = "Fegyver Light Sentry", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
+            AmmoRound = "Fegyver Medium Sentry", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0f, //0.0645f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
@@ -1752,7 +1753,7 @@ namespace Scripts
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
             Mass = 3000, // In kilograms; how much force the impact will apply to the target.
-            Health = 1200, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 2400, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -1907,25 +1908,26 @@ namespace Scripts
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = false,
-                    Radius = 3, // Meters
-                    Damage = 50,
-                    Depth = 2f,
-                    MaxAbsorb = 0f,
-                    Falloff = Linear, //.NoFalloff applies the same damage to all blocks in radius
+                    Enable = true ,
+                    Radius = 12f , // Meters
+                    Damage = 45000f ,
+                    Depth = 6f ,
+                    MaxAbsorb = 0f ,
+                    Falloff = Linear , //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
                     //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
                     //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 3600, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = false,
-                    NoSound = false,
-                    ParticleScale = 1f,
-                    CustomParticle = "FlechetteBurst", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Round, // Round or Diamond
+                    //.Exponential drops off exponentially.  Does not scale to max radius
+                    ArmOnlyOnHit = false , // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
+                    MinArmingTime = 0 , // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
+                    NoVisuals = false ,
+                    NoSound = false ,
+                    ParticleScale = 3 ,
+                    CustomParticle = "Definitive_Explosion", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "MyRailRoundHit", // SubtypeID from your Audio SBC, not a filename
+                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
                 }, 
             },
             Ewar = new EwarDef
@@ -1995,7 +1997,7 @@ namespace Scripts
                 //Debug = true,
                 TargetLossDegree = 0f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 7200, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
                 DesiredSpeed = 2f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
@@ -2206,7 +2208,7 @@ namespace Scripts
                     Interval = 10, // Time between spawning fragments, in ticks
                     StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 900, // Max number of fragment children to spawn
-                    Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 7000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = false, // Parent dies once after it spawns its last child.
                     PointAtTarget = false, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
@@ -3020,14 +3022,13 @@ namespace Scripts
         //Orszem Sentry Drone
         private AmmoDef OrszemSentry => new AmmoDef
         {
-            
             AmmoMagazine = "", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "OrszemSentryStage", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
             Mass = 3000, // In kilograms; how much force the impact will apply to the target.
-            Health = 1200, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            Health = 2400, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -3062,14 +3063,14 @@ namespace Scripts
                     Enable = true, // Enables TimedSpawns mechanism
                     Interval = 0, // Time between spawning fragments, in ticks, 0 means every tick, 1 means every other
                     StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 770, // Max number of fragment children to spawn
-                    Proximity = 900, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    MaxSpawns = 4200, // Max number of fragment children to spawn
+                    Proximity = 1500, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = false, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Direct, // Point accuracy, Direct (straight forward), Lead (always fire), Predict (only fire if it can hit)
                     DirectAimCone = 0f, //Aim cone used for Direct fire, in degrees
-                    GroupSize = 110, // Number of spawns in each group
-                    GroupDelay = 60, // Delay between each group.
+                    GroupSize = 120, // Number of spawns in each group
+                    GroupDelay = 30, // Delay between each group.
                 },
 
             },
@@ -3164,25 +3165,26 @@ namespace Scripts
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = false,
-                    Radius = 3, // Meters
-                    Damage = 50,
-                    Depth = 2f,
-                    MaxAbsorb = 0f,
-                    Falloff = Linear, //.NoFalloff applies the same damage to all blocks in radius
+                    Enable = true ,
+                    Radius = 12f , // Meters
+                    Damage = 45000f ,
+                    Depth = 6f ,
+                    MaxAbsorb = 0f ,
+                    Falloff = Linear , //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
                     //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
                     //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 3600, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = false,
-                    NoSound = false,
-                    ParticleScale = 1f,
-                    CustomParticle = "FlechetteBurst", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Round, // Round or Diamond
+                    //.Exponential drops off exponentially.  Does not scale to max radius
+                    ArmOnlyOnHit = false , // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
+                    MinArmingTime = 0 , // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
+                    NoVisuals = false ,
+                    NoSound = false ,
+                    ParticleScale = 3 ,
+                    CustomParticle = "Definitive_Explosion", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "MyRailRoundHit", // SubtypeID from your Audio SBC, not a filename
+                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
                 }, 
             },
             Ewar = new EwarDef
@@ -3252,7 +3254,7 @@ namespace Scripts
                 //Debug = true,
                 TargetLossDegree = 0f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 7200, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
                 DesiredSpeed = 2f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
@@ -3583,10 +3585,10 @@ namespace Scripts
             },
             Ewar = new EwarDef
             {
-                Enable = false, // Enables the EWAR , Electronic-Warfare System
-                Type = Emp, // EnergySink, Emp, Offense, Nav, Dot, AntiSmart, JumpNull, Anchor, Tractor, Pull, Push, 
+                Enable = true, // Enables the EWAR , Electronic-Warfare System
+                Type = Offense, // EnergySink, Emp, Offense, Nav, Dot, AntiSmart, JumpNull, Anchor, Tractor, Pull, Push, 
                 Mode = Effect, // Effect , Field
-                Strength = 1f,
+                Strength = 100f,
                 Radius = 15f, // Meters
                 Duration = 500, // In Ticks
                 StackDuration = true, // Combined Durations
@@ -3734,14 +3736,14 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    ColorVariance = Random(start: 0.75f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.25f, end: 3f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0.25f, end: 1f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
                         Length = 1f, //
                         Width = 1f, //
-                        Color = Color(red: 1, green: 12, blue: 1f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Color = Color(red: 5, green: 12, blue: 12, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -3757,7 +3759,7 @@ namespace Scripts
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
-                            Color = Color(red: 2, green: 2, blue: 2.5f, alpha: 1),
+                            Color = Color(red: 2, green: 4, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
                             Reverse = false,
                             UseLineVariance = true,
@@ -3773,7 +3775,7 @@ namespace Scripts
                         },
                         TextureMode = Normal,
                         DecayTime = 1, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
-                        Color = Color(red: 12, green: 12, blue: 1, alpha: 1),
+                        Color = Color(red: 5, green: 12, blue: 12, alpha: 1),
                         Back = true,
                         CustomWidth = 1f,
                         UseWidthVariance = false,
