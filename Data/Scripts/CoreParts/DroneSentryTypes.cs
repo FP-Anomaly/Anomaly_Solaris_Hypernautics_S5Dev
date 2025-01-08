@@ -498,7 +498,7 @@ namespace Scripts
                     PointType = Lead, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
                     GroupSize = 1, // Number of spawns in each group
                     GroupDelay = 60, // Delay between each group.
-                    DirectAimCone = 2, //Angle cone in which the drone will open fire.
+                    DirectAimCone = 0.15f, //Angle cone in which the drone will open fire.
                 },
 
             },
@@ -1080,7 +1080,7 @@ namespace Scripts
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
+                Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 1f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 900, //120 is required for sound. 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
@@ -1094,6 +1094,7 @@ namespace Scripts
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
+                    SteeringLimit = 2, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
                     Inaccuracy = 0, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3, // controls how responsive tracking is.
                     MaxLateralThrust = 3f, // controls how sharp the trajectile may turn
@@ -3063,7 +3064,7 @@ namespace Scripts
                     Enable = true, // Enables TimedSpawns mechanism
                     Interval = 0, // Time between spawning fragments, in ticks, 0 means every tick, 1 means every other
                     StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 4200, // Max number of fragment children to spawn
+                    MaxSpawns = 5760, // Max number of fragment children to spawn
                     Proximity = 1500, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = false, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
@@ -3713,7 +3714,7 @@ namespace Scripts
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "",
+                        Name = "ArcImpact",
                         ApplyToShield = true,
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
@@ -3742,7 +3743,7 @@ namespace Scripts
                     {
                         Enable = true,
                         Length = 1f, //
-                        Width = 1f, //
+                        Width = 0.35f, //
                         Color = Color(red: 5, green: 12, blue: 12, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
@@ -3754,16 +3755,16 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "", // Please always have this Line set, if this Section is enabled.
+                                "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                             },
-                            SegmentLength = 0f, // Uses the values below.
+                            SegmentLength = 50f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
                             Color = Color(red: 2, green: 4, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
                             Reverse = false,
                             UseLineVariance = true,
-                            WidthVariance = Random(start: 0f, end: 0f),
+                            WidthVariance = Random(start: 0.5f, end: 0.75f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
                     },
@@ -3783,16 +3784,16 @@ namespace Scripts
                     },
                     OffsetEffect = new OffsetEffectDef
                     {
-                        MaxOffset = 0,// 0 offset value disables this effect
-                        MinLength = 0.2f,
-                        MaxLength = 3,
+                        MaxOffset = 3,// 0 offset value disables this effect
+                        MinLength = 1.2f,
+                        MaxLength = 5,
                     },
                 },
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
-                HitSound = "",
+                TravelSound = "ShipLargeWheelsRun", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                HitSound = "ShipLargeWheelsRun",
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",

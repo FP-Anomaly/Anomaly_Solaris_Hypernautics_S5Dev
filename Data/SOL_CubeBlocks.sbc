@@ -874,9 +874,9 @@
       <DisplayName>[SOL] Sentry Hangar Bay</DisplayName>
       <Icon>Textures\GUI\Icons\Hangar.dds</Icon>
       <Description>
-	  	2 Minute Sentry Reload
+		2 Minute Sentry Reload
 		1 km Deployment Distance
-		
+
 		[Fegyver Medium Sentry]
 		7km Railgun
 		20 Shots
