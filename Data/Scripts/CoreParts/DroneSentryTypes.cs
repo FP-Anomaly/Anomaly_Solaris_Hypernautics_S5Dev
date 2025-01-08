@@ -492,7 +492,7 @@ namespace Scripts
                     Interval = 1800, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 3, // Max number of fragment children to spawn
-                    Proximity = 10000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Lead, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
@@ -1789,7 +1789,7 @@ namespace Scripts
                     Interval = 360, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
                     MaxSpawns = 21, // Max number of fragment children to spawn
-                    Proximity = 7000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
+                    Proximity = 6000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
                     PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
