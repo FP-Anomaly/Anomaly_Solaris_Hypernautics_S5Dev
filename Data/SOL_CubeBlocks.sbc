@@ -792,10 +792,10 @@
 			</Id>
 			<DisplayName>[SOL] Scathis M-77</DisplayName>
 			<Description>
-			4km Range
+			10km Range
 			Adjustable RoF
 			64-round...uh...volley?
-			20 second reload
+			8 second reload
 			</Description>
 			<Icon>Textures\GUI\Icons\Cubes\Metal_Storm.dds</Icon>
 			<CubeSize>Large</CubeSize>
