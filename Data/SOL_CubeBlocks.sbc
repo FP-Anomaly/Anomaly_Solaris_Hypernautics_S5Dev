@@ -574,7 +574,7 @@
 			[Velocity: 2.5km/s]
 			[Damage: Kinetic]
 			</Description>
-			<Icon>Textures\GUI\Icons\SA_GaussAP_Large.dds</Icon>
+			<Icon>Textures\Icons\SA_Auger_S3.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<BlockTopology>TriangleMesh</BlockTopology>
