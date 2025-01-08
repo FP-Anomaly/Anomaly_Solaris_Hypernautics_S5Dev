@@ -686,7 +686,7 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
-                DesiredSpeed = 2f, // voxel phasing if you go above 5100
+                DesiredSpeed = 0.25f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
                 MaxTrajectory = 20000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
@@ -2000,7 +2000,7 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
-                DesiredSpeed = 2f, // voxel phasing if you go above 5100
+                DesiredSpeed = 0.25f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
                 MaxTrajectory = 7000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
@@ -3257,7 +3257,7 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 7400, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 50f,
-                DesiredSpeed = 2f, // voxel phasing if you go above 5100
+                DesiredSpeed = 0.25f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
                 MaxTrajectory = 7000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
