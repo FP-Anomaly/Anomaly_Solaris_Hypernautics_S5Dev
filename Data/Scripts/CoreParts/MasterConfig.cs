@@ -19,6 +19,8 @@ namespace Scripts
         SolHyp_MAC,
         Point_Singularity_Projector,
         Scathis,
+        Dreadnaught_Beacon, 
+        Nebulon_Beacon,
         Sentry_Hangar,
         Strikecraft_Hangar,
         Test_Hangar
