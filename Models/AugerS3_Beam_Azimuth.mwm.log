@@ -1,5 +1,5 @@
-Running from: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models 
-Command: C:\Users\wolvo\OneDrive\Desktop\SEUT text\Tools\MWMBuilder\MwmBuilder.exe /f /s:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models /m:AugerS3_Beam_Azimuth*.fbx /o:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models /x:C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials 
+Running from: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models 
+Command: C:\Users\wolvo\OneDrive\Desktop\SEUT text\Tools\MWMBuilder\MwmBuilder.exe /f /s:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models /m:AugerS3_Beam_Azimuth*.fbx /o:C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models /x:C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials 
 C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Armors.xml: 
     Materialslib
 C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Character.xml: 
@@ -21,22 +21,22 @@ C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials\Voxels.xml:
 Material Libraries: 
     Material libraries were successfully loaded from path: C:\Users\wolvo\OneDrive\Desktop\SEUT text\Materials
 : 
-    **FileName: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\AugerS3_Beam_Azimuth.fbx
+    **FileName: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models\AugerS3_Beam_Azimuth.fbx
 : 
     **Filename (without extension): AugerS3_Beam_Azimuth
 : 
-    **Directory Name: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models
+    **Directory Name: C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models
 : 
-    **Number of characters to cull: 91
+    **Number of characters to cull: 86
 : 
     **Culled Path: Models
 Meshes: 
     Found 2 meshe(s).
 Animations: 
     Found 0 animation(s).
-C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\AugerS3_Beam_Azimuth.fbx: WARNING: 
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models\AugerS3_Beam_Azimuth.fbx: WARNING: 
     Material: Metal_Dull is already defined in the processor. Not adding it again..
-C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\AugerS3_Beam_Azimuth.fbx: WARNING: 
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models\AugerS3_Beam_Azimuth.fbx: WARNING: 
     Material: Atlas1 is already defined in the processor. Not adding it again..
-C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev-main\Models\AugerS3_Beam_Azimuth.fbx: 
-    : Finished in 2.0s
+C:\Users\wolvo\AppData\Roaming\SpaceEngineers\Mods\Anomaly_Solaris_Hypernautics_S5Dev\Models\AugerS3_Beam_Azimuth.fbx: 
+    : Finished in 0.4s
