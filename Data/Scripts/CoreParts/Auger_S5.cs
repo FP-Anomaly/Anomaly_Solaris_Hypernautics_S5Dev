@@ -19,18 +19,18 @@ namespace Scripts {
                     new MountPointDef {
                         SubtypeId = "Meson5_Turret",
                         SpinPartId = "None", // For weapons with a spinning barrel such as Gatling Guns.
-                        MuzzlePartId = "K_SA_GAP_Ele", // The subpart where your muzzle empties are located.
-                        AzimuthPartId = "K_SA_GAP_Rot",
-                        ElevationPartId = "K_SA_GAP_Ele",
+                        MuzzlePartId = "Meson5_Elevation", // The subpart where your muzzle empties are located.
+                        AzimuthPartId = "Meson5_Azimuth",
+                        ElevationPartId = "Meson5_Elevation",
                         DurabilityMod = 0.25f, // GeneralDamageMultiplier, 0.25f = 25% damage taken.
                         IconName = "TestIcon.dds" // Overlay for block inventory slots, like reactors, refineries, etc.
                     },
                 },
                 Muzzles = new[] {
-                    "Muzzle_Gauss_01",
+                    "Muzzle_Meson5",
                 },
                 Ejector = "", // Optional; empty from which to eject "shells" if specified.
-                Scope = "", // Where line of sight checks are performed from. Must be clear of block collision.
+                Scope = "Scope_Meson5", // Where line of sight checks are performed from. Must be clear of block collision.
             },
             Targeting = new TargetingDef
             {
