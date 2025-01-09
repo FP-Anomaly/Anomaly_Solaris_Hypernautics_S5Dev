@@ -583,15 +583,15 @@
 			<Model>Models\SA_Auger_S3.mwm</Model>
 			<UseModelIntersection>true</UseModelIntersection>
 			<Components>
-				<Component Subtype="SteelPlate" Count="50" />
-				<Component Subtype="Superconductor" Count="150" />
+				<Component Subtype="SteelPlate" Count="10" />
+				<Component Subtype="Superconductor" Count="250" />
 				<Component Subtype="Construction" Count="240" />
 				<Component Subtype="Motor" Count="120" />
-				<Component Subtype="Reactor" Count="30" />
-				<Component Subtype="Detector" Count="45" />
+				<Component Subtype="Reactor" Count="20" />
+				<Component Subtype="Detector" Count="120" />
+				<Component Subtype="MetalGrid" Count="145" />
 				<Component Subtype="Computer" Count="200" />
-				<Component Subtype="MetalGrid" Count="125" />
-				<Component Subtype="SteelPlate" Count="750" />
+				<Component Subtype="SteelPlate" Count="650" />
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
@@ -621,7 +621,7 @@
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
-			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<BuildTimeSeconds>120</BuildTimeSeconds>
 			<InventoryMaxVolume>1</InventoryMaxVolume>
 			<DamageEffectId>213</DamageEffectId>
 			<AiEnabled>false</AiEnabled>
@@ -792,7 +792,7 @@
 			</Id>
 			<DisplayName>[SOL] Scathis M-77</DisplayName>
 			<Description>
-			10km Range
+			5.5km Range
 			Adjustable RoF
 			64-round...uh...volley?
 			8 second reload

@@ -33,10 +33,10 @@ namespace Scripts
         private AmmoDef Meson_Medium_Round => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
-            AmmoRound = "Medium Meson Beam", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
-            HybridRound = true, // Use both a physical ammo magazine and energy per shot.
-            EnergyCost = 0.04f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 9500f, // Direct damage; one steel plate is worth 100.
+            AmmoRound = "Medium Meson Pulse", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
+            HybridRound = false, // Use both a physical ammo magazine and energy per shot.
+            EnergyCost = 0.190f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
+            BaseDamage = 3500f, // Direct damage; one steel plate is worth 100.
             Mass = 40f, // In kilograms; how much force the impact will apply to the target.
             Health = 40, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
 
@@ -118,13 +118,13 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 1.65f, // Multiplier for damage against light armor.
-                    Heavy = 0.95f, // Multiplier for damage against heavy armor.
-                    NonArmor = 0.55f, // Multiplier for damage against every else.
+                    Light = 1.05f, // Multiplier for damage against light armor.
+                    Heavy = 1.25f, // Multiplier for damage against heavy armor.
+                    NonArmor = 0.75f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 1.4f, // Multiplier for damage against shields.
+                    Modifier = 2.4f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -158,7 +158,7 @@ namespace Scripts
                 ByBlockHit = new ByBlockHitDef
                 {
                     Enable = false,
-                    Radius = 5f, // Meters
+                    Radius = 3f, // Meters
                     Damage = 5f,
                     Depth = 1f, // Meters
                     MaxAbsorb = 0f,
@@ -174,11 +174,11 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 1f, // Meters
-                    Damage = 15000f,
+                    Radius = 3f, // Meters
+                    Damage = 4500f,
                     Depth = 1f,
                     MaxAbsorb = 0f,
-                    Falloff = NoFalloff, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Linear, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -258,12 +258,12 @@ namespace Scripts
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 80f, // Degrees, Is pointed forward
+                Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
+                TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 900, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 1700, // voxel phasing if you go above 5100
+                DesiredSpeed = 3200, // voxel phasing if you go above 5100
                 MaxTrajectory = 5000f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
@@ -304,21 +304,26 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Expanse_Trail", //ShipWelderArc
+                        Name = "NecronEnergyProjectile", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 0.25f,
+                            Scale = 0.15f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "",
+                        Name = "ARROWNUKE",
                         ApplyToShield = true,
+
+                        Color = Color(red: 3, green: 1f, blue: 1.9f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1f,
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 10,
+                            Scale = 0.4f,
                             HitPlayChance = 1f,
                         },
                     },
@@ -336,14 +341,14 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    ColorVariance = Random(start: 0f, end: 0f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.25f, end: 3f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0.25f, end: 1f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 5f, //
-                        Width = 0.5f, //
-                        Color = Color(red: 1f, green: 3f, blue: 2f, alpha: 0.75f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 2f, //
+                        Width = 0.15f, //
+                        Color =  Color(red: 40f, green: 40f, blue: 25f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -360,7 +365,7 @@ namespace Scripts
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
                             Color = Color(red: 1f, green: 2f, blue: 2.5f, alpha: 1f),
-                            WidthMultiplier = 1f,
+                            WidthMultiplier = 0.25f,
                             Reverse = false,
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
@@ -375,7 +380,7 @@ namespace Scripts
                         },
                         TextureMode = Normal,
                         DecayTime = 10, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
-                        Color = Color(red: 2.5f, green: 7f, blue: 1f, alpha: 1f),
+                        Color = Color(red: 40f, green: 40f, blue: 25f, alpha: 1),
                         Back = false,
                         CustomWidth = 0.25f,
                         UseWidthVariance = false,
@@ -383,9 +388,9 @@ namespace Scripts
                     },
                     OffsetEffect = new OffsetEffectDef
                     {
-                        MaxOffset = 0,// 0 offset value disables this effect
+                        MaxOffset = 2,// 0 offset value disables this effect
                         MinLength = 0.2f,
-                        MaxLength = 2,
+                        MaxLength = 3,
                     },
                 },
             },
