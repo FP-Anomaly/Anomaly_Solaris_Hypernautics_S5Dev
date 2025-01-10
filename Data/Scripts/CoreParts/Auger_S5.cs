@@ -22,7 +22,7 @@ namespace Scripts {
                         MuzzlePartId = "Meson5_Elevation", // The subpart where your muzzle empties are located.
                         AzimuthPartId = "Meson5_Azimuth",
                         ElevationPartId = "Meson5_Elevation",
-                        DurabilityMod = 0.25f, // GeneralDamageMultiplier, 0.25f = 25% damage taken.
+                        DurabilityMod = 0.5f, // GeneralDamageMultiplier, 0.25f = 25% damage taken.
                         IconName = "TestIcon.dds" // Overlay for block inventory slots, like reactors, refineries, etc.
                     },
                 },
@@ -89,7 +89,7 @@ namespace Scripts {
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
                     InventorySize = 0.639f, // Inventory capacity in kL.
-                    IdlePower = 0.25f, // Constant base power draw in MW.
+                    IdlePower = 200f, // Constant base power draw in MW.
                     FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 4), // Offsets the aiming/firing line of the weapon, in metres.
                     Type = BlockWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
@@ -115,11 +115,11 @@ namespace Scripts {
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 240, // Set this to 3600 for beam weapons.
+                    RateOfFire = 1800, // Set this to 3600 for beam weapons.
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 300, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 420, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 12, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 40, // Heat generated per shot.
@@ -151,7 +151,7 @@ namespace Scripts {
                 {
                     Effect1 = new ParticleDef
                     {
-                        Name = "", // SubtypeId of muzzle particle effect.
+                        Name = "FieldShield", // SubtypeId of muzzle particle effect.
                         Color = Color(red: 0.1f, green: 0.2f, blue: 0, alpha: 0.1f), // Deprecated, set color in particle sbc.
                         Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
 
@@ -159,29 +159,32 @@ namespace Scripts {
                         {
                             Loop = false, // Set this to the same as in the particle sbc!
                             Restart = false, // Whether to end a looping effect instantly when firing stops.
-                            MaxDistance = 50, // Max distance at which this effect should be visible. NOTE: This will use whichever MaxDistance value is higher across Effect1 and Effect2!
+                            MaxDistance = 5000, // Max distance at which this effect should be visible. NOTE: This will use whichever MaxDistance value is higher across Effect1 and Effect2!
                             MaxDuration = 6, // Deprecated.
                             Scale = 1f, // Scale of effect.
                         },
                     },
                     Effect2 = new ParticleDef
                     {
-                        Name = "",
-                        Color = Color(red: 0.1f, green: 0.1f, blue: 0.1f, alpha: 0.1f),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Name = "SolHyp_MAC_Muzzleflash", // SubtypeId of muzzle particle effect.
+                        Color = Color(red: 15, green: 2, blue: 1, alpha: 0.8f),  // Deprecated, set color in particle sbc.
+                        Offset = Vector(x: 0, y: 0.22, z: -1.5), // Offsets the effect from the muzzle empty.
 
                         Extras = new ParticleOptionDef
                         {
-                            Restart = false,
-                            MaxDistance = 150,
-                            MaxDuration = 6,
-                            Scale = 1f,
+                            Loop = false, // Deprecated, set this in particle sbc.
+                            Restart = true, // Whether to end the previous effect early and spawn a new one.
+                            MaxDistance = 5000, // Max distance at which this effect should be visible. NOTE: This will use whichever MaxDistance value is higher across Effect1 and Effect2!
+                            MaxDuration = 0, // How many ticks the effect should be ended after, if it's still running.
+                            Scale = 1f, // Scale of effect.
                         },
                     },
                 },
             },
             Ammos = new[] {
-                Meson_Heavy_Round, //Nariman_EWAR_Round,  Must list all primary, shrapnel, and pattern ammos.
+                Meson_Heavy_Round,
+                
+                //Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Nariman_Dart_Animation,
             //Upgrades = UpgradeModules,

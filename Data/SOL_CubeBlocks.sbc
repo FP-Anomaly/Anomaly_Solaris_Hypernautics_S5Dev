@@ -494,7 +494,7 @@
 			[Velocity: 2.5km/s]
 			[Damage: Kinetic]
 			</Description>
-			<Icon>Textures\GUI\Icons\SA_GaussAP_Large.dds</Icon>
+			<Icon>Textures\Icons\SA_Auger_S5.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<BlockTopology>TriangleMesh</BlockTopology>
@@ -503,15 +503,15 @@
 			<Model>Models\SA_Auger_S5.mwm</Model>
 			<UseModelIntersection>true</UseModelIntersection>
 			<Components>
-				<Component Subtype="SteelPlate" Count="50" />
-				<Component Subtype="Superconductor" Count="150" />
-				<Component Subtype="Construction" Count="240" />
-				<Component Subtype="Motor" Count="120" />
-				<Component Subtype="Reactor" Count="30" />
-				<Component Subtype="Detector" Count="45" />
-				<Component Subtype="Computer" Count="200" />
-				<Component Subtype="MetalGrid" Count="125" />
-				<Component Subtype="SteelPlate" Count="750" />
+				<Component Subtype="SteelPlate" Count="150" />
+				<Component Subtype="Superconductor" Count="350" />
+				<Component Subtype="Construction" Count="420" />
+				<Component Subtype="Motor" Count="360" />
+				<Component Subtype="Reactor" Count="70" />
+				<Component Subtype="Detector" Count="60" />
+				<Component Subtype="Computer" Count="300" />
+				<Component Subtype="MetalGrid" Count="450" />
+				<Component Subtype="SteelPlate" Count="1250" />
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
