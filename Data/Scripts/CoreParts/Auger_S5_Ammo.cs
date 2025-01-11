@@ -402,7 +402,7 @@ namespace Scripts
                 TravelSound = "FCC_Whistle", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "",
                 ShotSound = "",
-                ShieldHitSound = "",
+                ShieldHitSound = "AugerHitA",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
                 FloatingHitSound = "",

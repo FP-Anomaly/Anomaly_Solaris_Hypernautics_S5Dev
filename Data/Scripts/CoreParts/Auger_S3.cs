@@ -80,8 +80,8 @@ namespace Scripts {
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.02f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
-                    ElevateRate = 0.02f, // Max traversal speed of elevation subpart in radians per tick.
+                    RotateRate = 0.01f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
+                    ElevateRate = 0.01f, // Max traversal speed of elevation subpart in radians per tick.
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = -180,
@@ -141,11 +141,11 @@ namespace Scripts {
                 Audio = new HardPointAudioDef
                 {
                     PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "DroidTankArtillery", // Audio for firing.
+                    FiringSound = "Auger3Fire", // Audio for firing.
                     FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
-                    ReloadSound = "",
+                    ReloadSound = "Auger3Reload",
                     NoAmmoSound = "",
-                    HardPointRotationSound = "", // Audio played when turret is moving.
+                    HardPointRotationSound = "AugerGears", // Audio played when turret is moving.
                     BarrelRotationSound = "",
                     FireSoundEndDelay = 0, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },

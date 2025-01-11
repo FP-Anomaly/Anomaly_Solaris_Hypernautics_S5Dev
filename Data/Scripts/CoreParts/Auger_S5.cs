@@ -139,11 +139,11 @@ namespace Scripts {
                 Audio = new HardPointAudioDef
                 {
                     PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "DroidTankArtillery", // Audio for firing.
-                    FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
-                    ReloadSound = "",
+                    FiringSound = "Auger5Fire", // Audio for firing.
+                    FiringSoundPerShot = false, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
+                    ReloadSound = "Auger5Reload",
                     NoAmmoSound = "",
-                    HardPointRotationSound = "", // Audio played when turret is moving.
+                    HardPointRotationSound = "AugerGears", // Audio played when turret is moving.
                     BarrelRotationSound = "",
                     FireSoundEndDelay = 0, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },

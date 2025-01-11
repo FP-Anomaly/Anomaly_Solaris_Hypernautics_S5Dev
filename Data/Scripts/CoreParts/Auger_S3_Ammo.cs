@@ -399,7 +399,7 @@ namespace Scripts
                 TravelSound = "DRONEFLYBY", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "PPCImpact",
                 
-                ShieldHitSound = "",
+                ShieldHitSound = "AugerHitA",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
                 FloatingHitSound = "",
