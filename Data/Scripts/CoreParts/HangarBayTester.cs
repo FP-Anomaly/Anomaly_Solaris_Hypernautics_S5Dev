@@ -195,16 +195,17 @@ namespace Scripts
             Ammos = new[] {
                 //Dragonyos,
                 // AryxATLASAmmoDrone,
-
+                Z95,
+                
                 //TesterLauncher, //Goes drunkenly for a kilometer, then next stage is sentry mode to stay still
                 //
                 //
                 //
                 //FegyverDummy, //transitional stage between Launcher and Sentry
-                TesterSentry, //Sentry mode, is the parent stage for the weapon fragments
+                //TesterSentry, //Sentry mode, is the parent stage for the weapon fragments
                 //
                 //LaserPainter, //Zero damage weapon that will follow any target continuously, might blink on and off
-                MediumArtillery, //Main weapon, does the actual damage, only fires when it can
+                //MediumArtillery, //Main weapon, does the actual damage, only fires when it can
                 //
                 //FegyverReturn //Return stage that goes very fast back to hangar
 

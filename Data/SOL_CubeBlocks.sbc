@@ -1118,7 +1118,7 @@
       <BlockTopology>TriangleMesh</BlockTopology>
       <Size x="5" y="2" z="2"/>
 			<ModelOffset x="0" y="0" z="0"/>
-      <Model>Models\SwordMelee.mwm</Model>
+      <Model>Models\Hangar.mwm</Model>
       <Components>
         <Component Subtype="SteelPlate" Count="250" />
         <Component Subtype="Construction" Count="500" />	
