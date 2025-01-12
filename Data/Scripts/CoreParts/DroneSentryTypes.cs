@@ -42,7 +42,6 @@ namespace Scripts
     partial class Parts
     {
 
-
     //Agyu Launcher Stage
     private AmmoDef AgyuLauncher => new AmmoDef
         {
@@ -303,8 +302,8 @@ namespace Scripts
                     CheckFutureIntersection = false, // Utilize obstacle avoidance?
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-                    Roam = true, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    Roam = false, // Roam current area after target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 3f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     NoSteering = true, // this disables target follow and instead travel straight ahead (but will respect offsets)
@@ -491,7 +490,7 @@ namespace Scripts
                     Enable = true, // Enables TimedSpawns mechanism
                     Interval = 1800, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 4, // Max number of fragment children to spawn
+                    MaxSpawns = 21, // Max number of fragment children to spawn
                     Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
@@ -505,14 +504,13 @@ namespace Scripts
             Pattern = new PatternDef
             {
                 Patterns = new[] { // If enabled, set of multiple ammos to fire in order instead of the main ammo.
-                    "",
-                    //"Coilgun_Artillery_Slug",
-                    //"Coilgun_Artillery_Slug",
-                    //"Coilgun_Artillery_Slug",
-                    //"Coilgun_Artillery_Slug",
+                    "Coilgun_Artillery_Slug",
+                    "Coilgun_Artillery_Slug",
+                    "Coilgun_Artillery_Slug",
+                    "Coilgun_Artillery_Slug",
                     //"FegyverReturnStage",
                 },
-                Enable = false,
+                Enable = true,
                 Mode = Both, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
                 TriggerChance = 1f,
                 Random = false,
@@ -690,7 +688,7 @@ namespace Scripts
                 AccelPerSec = 50f,
                 DesiredSpeed = 0.25f, // voxel phasing if you go above 5100
                 //MaxSpeed = 50, //Unknown
-                MaxTrajectory = 20000,
+                MaxTrajectory = 7000,
                 //FieldTime was here, it's dead now is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -865,7 +863,7 @@ namespace Scripts
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
             HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
-            EnergyMagazineSize = 3, // For energy weapons, how many shots to fire before reloading.
+            EnergyMagazineSize = 10, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
 
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -931,7 +929,7 @@ namespace Scripts
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
-                    Distance = 8000f, // Distance at which damage begins falling off.
+                    Distance = 6000f, // Distance at which damage begins falling off.
                     MinMultipler = 0.75f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
                 },
                 Grids = new GridSizeDef
@@ -1088,7 +1086,7 @@ namespace Scripts
                 MaxLifeTime = 900, //120 is required for sound. 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 5100, // voxel phasing if you go above 5100
-                MaxTrajectory = 20000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 10000f, //**MUST** be double of speed for sound to work good.// Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -1096,7 +1094,6 @@ namespace Scripts
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
-                    SteeringLimit = 0, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
                     Inaccuracy = 0, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3, // controls how responsive tracking is.
                     MaxLateralThrust = 3f, // controls how sharp the trajectile may turn
@@ -1108,8 +1105,8 @@ namespace Scripts
                     Roam = false, // Roam current area after target loss
                     KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     CheckFutureIntersection = true,
-                    OffsetRatio = 0f, // The ratio to offset the random dir (0 to 1) 
-                    OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
+                    OffsetRatio = 0.1f, // The ratio to offset the random dir (0 to 1) 
+                    OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                 },
                 Mines = new MinesDef
                 {
@@ -1141,7 +1138,7 @@ namespace Scripts
                         Name = "ARROWNUKE",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1f, blue: 1.9f, alpha: 1),
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -1157,7 +1154,7 @@ namespace Scripts
                         Name = "THESUNMUZZLE",
                         ApplyToShield = true,
 
-                        Color = Color(red: 3, green: 1f, blue: 1.9f, alpha: 1),
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -1213,7 +1210,7 @@ namespace Scripts
                         DecayTime = 120,
                         Color = Color(red: 40f, green: 40f, blue: 25f, alpha: 1),
                         Back = false,
-                        CustomWidth = 0.5f,
+                        CustomWidth = 0.2f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },
@@ -1249,6 +1246,22 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3794,8 +3807,8 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "ShipLargeWheelsRun", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
-                HitSound = "ShipLargeWheelsRun",
+                TravelSound = "LrgLaserFire", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                HitSound = "LrgLaserFire",
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
