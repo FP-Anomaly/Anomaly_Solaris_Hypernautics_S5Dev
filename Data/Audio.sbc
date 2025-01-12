@@ -26,14 +26,11 @@
       <VolumeVariation>0.1</VolumeVariation>
       <MaxDistance>2100</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>15</DynamicMusicAmount>
       <Loopable>false</Loopable>
       <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <Volume>1.2</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
@@ -52,14 +49,11 @@
       <VolumeVariation>0.1</VolumeVariation>
       <MaxDistance>2100</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>15</DynamicMusicAmount>
       <Loopable>false</Loopable>
       <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <Volume>1.2</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
@@ -78,14 +72,11 @@
       <VolumeVariation>0.1</VolumeVariation>
       <MaxDistance>2100</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>15</DynamicMusicAmount>
       <Loopable>false</Loopable>
       <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <Volume>1</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
@@ -104,14 +95,11 @@
       <VolumeVariation>0.1</VolumeVariation>
       <MaxDistance>2100</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
-      <DynamicMusicAmount>15</DynamicMusicAmount>
-      <Loopable>false</Loopable>
-      <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <DynamicMusicAmount>3</DynamicMusicAmount>
+      <Loopable>true</Loopable>
+      <SoundLimit>5</SoundLimit>
+      <Volume>1.2</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
@@ -128,20 +116,17 @@
       </Id>
       <Category>SHOT</Category>
       <VolumeVariation>0.1</VolumeVariation>
-      <MaxDistance>2100</MaxDistance>
+      <MaxDistance>500</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
-      <DynamicMusicAmount>15</DynamicMusicAmount>
-      <Loopable>false</Loopable>
-      <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <DynamicMusicAmount>1</DynamicMusicAmount>
+      <Loopable>true</Loopable>
+      <SoundLimit>1</SoundLimit>
+      <Volume>1.2</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
-          <Start>Audio\Auger\Goliath2GearLoop.wav</Start>
+          <Start>Audio\Auger\Goliath2GearLoopB.wav</Start>
         </Wave>
       </Waves>
     </Sound>
@@ -156,14 +141,11 @@
       <VolumeVariation>0.1</VolumeVariation>
       <MaxDistance>2100</MaxDistance>
       <PreventSynchronization>0</PreventSynchronization>
-      <DistantSounds>
-        <DistantSound DistanceCrossfade="10" Distance="1000" Sound="metalstormdistant" />
-      </DistantSounds>
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>15</DynamicMusicAmount>
       <Loopable>false</Loopable>
       <SoundLimit>32</SoundLimit>
-      <Volume>0.2</Volume>
+      <Volume>1.2</Volume>
       <PitchVariation>5</PitchVariation>
       <Waves>
         <Wave Type="D3">
@@ -173,7 +155,29 @@
     </Sound>
 
 
-
+    <!-- Auger Gear Loop -->
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>RadioGlitchLoop</SubtypeId>
+      </Id>
+      <Category>SHOT</Category>
+      <VolumeVariation>0.1</VolumeVariation>
+      <MaxDistance>3000</MaxDistance>
+      <PreventSynchronization>0</PreventSynchronization>
+      <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+      <DynamicMusicAmount>4</DynamicMusicAmount>
+      <Loopable>true</Loopable>
+      <SoundLimit>4</SoundLimit>
+      <Volume>0.7</Volume>
+      <PitchVariation>5</PitchVariation>
+      <MaxSounds>3</MaxSounds>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Auger\RadioLoop2MIN.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
 
 
 

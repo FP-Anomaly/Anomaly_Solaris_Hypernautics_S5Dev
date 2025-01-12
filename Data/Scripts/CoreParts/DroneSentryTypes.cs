@@ -285,7 +285,7 @@ namespace Scripts
                 MaxLifeTime = 800, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 200f,
                 DesiredSpeed = 200f, // voxel phasing if you go above 5100
-                MaxTrajectory = 20000f,
+                MaxTrajectory = 10000f,
                 DeaccelTime = 60, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -491,11 +491,11 @@ namespace Scripts
                     Enable = true, // Enables TimedSpawns mechanism
                     Interval = 1800, // Time between spawning fragments, in ticks
                     StartTime = 120, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 3, // Max number of fragment children to spawn
+                    MaxSpawns = 4, // Max number of fragment children to spawn
                     Proximity = 8000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
                     ParentDies = true, // Parent dies once after it spawns its last child.
                     PointAtTarget = true, // Start fragment direction pointing at Target
-                    PointType = Lead, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
+                    PointType = Predict, // Point accuracy, Direct, Lead (always fire), Predict (only fire if it can hit)
                     GroupSize = 1, // Number of spawns in each group
                     GroupDelay = 60, // Delay between each group.
                     DirectAimCone = 0.015f, //Angle cone in which the drone will open fire.
@@ -505,12 +505,14 @@ namespace Scripts
             Pattern = new PatternDef
             {
                 Patterns = new[] { // If enabled, set of multiple ammos to fire in order instead of the main ammo.
-                    "Coilgun_Artillery_Slug",
-                    "Coilgun_Artillery_Slug",
-                    "Coilgun_Artillery_Slug",
+                    "",
+                    //"Coilgun_Artillery_Slug",
+                    //"Coilgun_Artillery_Slug",
+                    //"Coilgun_Artillery_Slug",
+                    //"Coilgun_Artillery_Slug",
                     //"FegyverReturnStage",
                 },
-                Enable = true,
+                Enable = false,
                 Mode = Both, // Select when to activate this pattern, options: Never, Weapon, Fragment, Both 
                 TriggerChance = 1f,
                 Random = false,
@@ -703,14 +705,14 @@ namespace Scripts
                     NavAcceleration = 0, // helps influence how the projectile steers. 
                     TrackingDelay = 0, // Measured in Shape diameter units traveled.
                     AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
-                    MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MaxChaseTime = 7400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones
                     FutureIntersectionRange = 400,
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-                    Roam = true, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    Roam = false, // Roam current area after target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 0, // The range from target at which offsets are no longer active
@@ -827,7 +829,7 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "sunloop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                TravelSound = "RadioGlitchLoop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "",
                 ShotSound = "",
                 ShieldHitSound = "",
@@ -1099,7 +1101,7 @@ namespace Scripts
                     Aggressiveness = 3, // controls how responsive tracking is.
                     MaxLateralThrust = 3f, // controls how sharp the trajectile may turn
                     TrackingDelay = 10, // Measured in Shape diameter units traveled.
-                    MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MaxChaseTime = 7400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
@@ -2017,14 +2019,14 @@ namespace Scripts
                     NavAcceleration = 0, // helps influence how the projectile steers. 
                     TrackingDelay = 0, // Measured in Shape diameter units traveled.
                     AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
-                    MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MaxChaseTime = 7400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones
                     FutureIntersectionRange = 400,
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 0, // The range from target at which offsets are no longer active
@@ -2141,7 +2143,7 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "sunloop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                TravelSound = "RadioGlitchLoop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "",
                 ShotSound = "",
                 ShieldHitSound = "",
@@ -2412,7 +2414,7 @@ namespace Scripts
                     Aggressiveness = 3, // controls how responsive tracking is.
                     MaxLateralThrust = 3f, // controls how sharp the trajectile may turn
                     TrackingDelay = 10, // Measured in Shape diameter units traveled.
-                    MaxChaseTime = 12000, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MaxChaseTime = 7400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
@@ -3281,7 +3283,7 @@ namespace Scripts
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 0, // The range from target at which offsets are no longer active
@@ -3398,7 +3400,7 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "sunloop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                TravelSound = "RadioGlitchLoop", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "",
                 ShotSound = "",
                 ShieldHitSound = "",

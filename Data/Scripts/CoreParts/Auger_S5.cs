@@ -108,6 +108,8 @@ namespace Scripts {
                     RotateBarrelAxis = 0, // For spinning barrels, which axis to spin the barrel around; 0 = none.
                     EnergyPriority = 0, // Deprecated.
                     MuzzleCheck = false, // Whether the weapon should check LOS from each individual muzzle in addition to the scope.
+                    DisableLosCheck = true, // Do not perform LOS checks at all... not advised for self tracking weapons
+                    NoVoxelLosCheck = true, // If set to true this ignores voxels for LOS checking.. which means weapons will fire at targets behind voxels.  However, this can save cpu in some situations, use with caution. 
                     Debug = false, // Force enables debug mode.
                     RestrictionRadius = 0, // Prevents other blocks of this type from being placed within this distance of the centre of the block.
                     CheckInflatedBox = false, // If true, the above distance check is performed from the edge of the block instead of the centre.
@@ -122,7 +124,7 @@ namespace Scripts {
                     ReloadTime = 420, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 12, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 40, // Heat generated per shot.
+                    HeatPerShot = 10, // Heat generated per shot.
                     MaxHeat = 2000, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .5f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
                     HeatSinkRate = 200, // Amount of heat lost per second.
@@ -138,14 +140,14 @@ namespace Scripts {
                 },
                 Audio = new HardPointAudioDef
                 {
-                    PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "Auger5Fire", // Audio for firing.
-                    FiringSoundPerShot = false, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
+                    PreFiringSound = "Auger5Fire", // Audio for warmup effect.
+                    FiringSound = "AugerHitA", // Audio for firing.
+                    FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
                     ReloadSound = "Auger5Reload",
                     NoAmmoSound = "",
                     HardPointRotationSound = "AugerGears", // Audio played when turret is moving.
                     BarrelRotationSound = "",
-                    FireSoundEndDelay = 0, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
+                    FireSoundEndDelay = 10, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
                 Graphics = new HardPointParticleDef
                 {

@@ -121,13 +121,13 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = -1f, // Multiplier for damage against light armor.
-                    Heavy = -1f, // Multiplier for damage against heavy armor.
-                    NonArmor = 0.75f, // Multiplier for damage against every else.
+                    Light = 0.95f, // Multiplier for damage against light armor.
+                    Heavy = 0.85f, // Multiplier for damage against heavy armor.
+                    NonArmor = 1.45f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 2f, // Multiplier for damage against shields.
+                    Modifier = 4f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -194,7 +194,7 @@ namespace Scripts
                     NoSound = false,
                     ParticleScale = 2,
                     CustomParticle = "Definitive_Explosion", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
+                    CustomSound = "MyRailRoundHit", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
                 },
             },
@@ -253,7 +253,7 @@ namespace Scripts
             },
             Beams = new BeamDef
             {
-                Enable = true, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
+                Enable = false, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
                 VirtualBeams = false, // Only one damaging beam, but with the effectiveness of the visual beams combined (better performance).
                 ConvergeBeams = false, // When using virtual beams, converge the visual beams to the location of the real beam.
                 RotateRealBeam = false, // The real beam is rotated between all visual beams, instead of centered between them.
@@ -399,7 +399,7 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "FCC_Whistle", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                TravelSound = "Auger5Fire", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "",
                 ShotSound = "",
                 ShieldHitSound = "AugerHitA",
