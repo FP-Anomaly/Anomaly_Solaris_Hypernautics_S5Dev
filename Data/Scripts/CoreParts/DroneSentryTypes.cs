@@ -3807,8 +3807,8 @@ namespace Scripts
             },
             AmmoAudio = new AmmoAudioDef
             {
-                TravelSound = "LrgLaserFire", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
-                HitSound = "LrgLaserFire",
+                TravelSound = "", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                HitSound = "MedLaserLoop",
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
