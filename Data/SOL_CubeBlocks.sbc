@@ -407,8 +407,7 @@
 			</Id>
 			<DisplayName>[SOL] Nariman NanoDart Turret</DisplayName>
 			<Description>
-			Dual Purpose Turret
-			Smart NanoDart:
+			Guided Turret
 			[Range: 5km]
 			[Velocity: 2.5km/s]
 			[Damage: Energy]
@@ -491,7 +490,7 @@
 			Internal Turret
 			Heavy Meson Gun:
 			[Range: 5km]
-			[Velocity: 2.5km/s]
+			[Velocity: 5km/s]
 			[Damage: Kinetic]
 			</Description>
 			<Icon>Textures\Icons\SA_Auger_S5.dds</Icon>
@@ -571,7 +570,7 @@
 			Internal Turret
 			Medium Meson Gun:
 			[Range: 3km]
-			[Velocity: 2.5km/s]
+			[Velocity: 5km/s]
 			[Damage: Kinetic]
 			</Description>
 			<Icon>Textures\Icons\SA_Auger_S3.dds</Icon>
@@ -792,9 +791,11 @@
 			</Id>
 			<DisplayName>[SOL] Scathis M-77</DisplayName>
 			<Description>
-			5.5km Range
+			Burst AMS Turret
+			[Range: 5.5km]
+			[Velocity: 1km/s]
+			[Damage: Kinetic]
 			Adjustable RoF
-			64-round...uh...volley?
 			8 second reload
 			</Description>
 			<Icon>Textures\GUI\Icons\Cubes\Metal_Storm.dds</Icon>
